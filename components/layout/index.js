@@ -58,7 +58,7 @@ export default function Main({ children, ...props }) {
 
               {/* Open Graph / Facebook */}
               <meta property="og:type" content="website" />
-              <meta property="og:url" content="https://metatags.io/" />
+              <meta property="og:url" content="https://calebareeveso.com" />
               <meta
                 property="og:title"
                 content="Caleb Areeveso — Front-end Engineer "
@@ -73,7 +73,10 @@ export default function Main({ children, ...props }) {
               />
               {/* Twitter */}
               <meta property="twitter:card" content="summary_large_image" />
-              <meta property="twitter:url" content="https://metatags.io/" />
+              <meta
+                property="twitter:url"
+                content="https://calebareeveso.com"
+              />
               <meta
                 property="twitter:title"
                 content="Caleb Areeveso — Front-end Engineer "
