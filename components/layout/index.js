@@ -91,7 +91,7 @@ export default function Main({ children, ...props }) {
               />
             </Head>
 
-            <main>{children}</main>
+            <main className="grid gap-6 grid-cols-1">{children}</main>
           </div>
         </div>
       </div>
