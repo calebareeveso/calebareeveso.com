@@ -78,7 +78,7 @@ export default function Home() {
       </Head>
       <main>
         <header>
-          <h1 className="text-3xl">My personal website</h1>
+          <h1 className="text-3xl"> {">"} CALEB AREEVESO [England, UK]</h1>
         </header>
       </main>
     </>
