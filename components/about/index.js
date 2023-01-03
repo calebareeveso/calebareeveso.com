@@ -13,8 +13,23 @@ export default function Index(props) {
       </h2>
       <br />
       <h3>
-        Email me at hello@calebareeveso.com if you want to buddy up [work on a
-        project]. You can also find me on Twitter at @calebareeveso.
+        Email me at{" "}
+        <u>
+          <b>
+            <Link href="mailto:hello@calebareeveso.com">
+              hello@calebareeveso.com
+            </Link>
+          </b>
+        </u>{" "}
+        if you want to buddy up [work on a project]. You can also find me on
+        Twitter at{" "}
+        <u>
+          <b>
+            <Link href="https://twitter.com/calebareeveso" target={"_blank"}>
+              @calebareeveso.
+            </Link>
+          </b>
+        </u>
       </h3>
     </div>
   );
