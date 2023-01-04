@@ -9,7 +9,10 @@ export default function Index(props) {
         depth and detail in terms of both visuals and functionality. By paying
         close attention to detail during the development process and making
         efficient use of front-end technology, I've been able to deliver an
-        immersive and engaging experience for users. See my work
+        immersive and engaging experience for users.{" "}
+        <u>
+          <Link href="#projects">See my work</Link>
+        </u>
       </h2>
       <br />
       <h3>

@@ -30,16 +30,20 @@ export default function Index(props) {
     },
   ];
   return (
-    <div className="grid grid-cols-1 gap-6 mb-6">
-      {projectList.map(({ name, URL, info, ImageSource }, index) => (
-        <ProjecCard
-          projectName={name}
-          projectURL={URL}
-          projectInfo={info}
-          projectIndex={index}
-          projectImageSource={ImageSource}
-        />
-      ))}
+    <div className="mb-6" id="projects">
+      {" "}
+      <h1 className="text-base mb-3"> {">"} PROJECTS</h1>
+      <div className="grid grid-cols-1 gap-6 ">
+        {projectList.map(({ name, URL, info, ImageSource }, index) => (
+          <ProjecCard
+            projectName={name}
+            projectURL={URL}
+            projectInfo={info}
+            projectIndex={index}
+            projectImageSource={ImageSource}
+          />
+        ))}
+      </div>
     </div>
   );
 }
