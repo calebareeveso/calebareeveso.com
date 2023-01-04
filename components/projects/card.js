@@ -20,7 +20,7 @@ export default function Cards(props) {
         <h5 className="sm:text-base text-[12px] xs:text-sm">
           <b>{props.projectName}</b>
         </h5>
-        <p className="sm:text-base text-[12px] xs:text-sm">
+        <p className="sm:text-base text-[12px] xs:text-sm line-clamp-2">
           {props.projectInfo}
         </p>
         <b>
