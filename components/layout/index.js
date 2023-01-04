@@ -89,6 +89,11 @@ export default function Main({ children, ...props }) {
                 property="twitter:image"
                 content="https://calebareeveso.com/static/images/calebareveso_banner.png"
               />
+              {/* Google Site Verification */}
+              <meta
+                name="google-site-verification"
+                content="tVVhpkrocfGKdSKNMfX6etQiGioq7rqUc_uS5KCEEIs"
+              />
             </Head>
 
             <main className="grid gap-6 grid-cols-1">{children}</main>
