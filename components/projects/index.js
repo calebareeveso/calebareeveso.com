@@ -60,7 +60,7 @@ export default function Index(props) {
           </button>
         )}
       </div>
-      <div className="grid grid-cols-1 gap-6 ">
+      <div className="grid grid-cols-1 gap-5 xs:gap-6 ">
         {projectList.map(({ name, URL, info, ImageSource }, index) => (
           <ProjecCard
             projectName={name}

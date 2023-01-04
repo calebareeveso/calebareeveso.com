@@ -5,7 +5,7 @@ export default function Cards(props) {
   const cardIndex0 =
     "transition ease-in-out duration-300 z-40 scale-[1]  border-secondaryGray border flex bg-primaryGray rounded-md overflow-hidden";
   const cardIndex1 =
-    "transition ease-in-out duration-300 absolute top-[35%] sm:top-[33%] blur-[0.5px] z-30 scale-[0.9] border-secondaryGray border flex bg-primaryGray rounded-md overflow-hidden ";
+    "transition ease-in-out duration-300 absolute top-[36%] sm:top-[33%] blur-[0.5px] z-30 scale-[0.9] border-secondaryGray border flex bg-primaryGray rounded-md overflow-hidden ";
 
   const cardIndex2 =
     "transition ease-in-out duration-300 absolute top-[45%] z-20 blur-[1px] scale-[0.8] border-secondaryGray border flex bg-primaryGray rounded-md overflow-hidden";
