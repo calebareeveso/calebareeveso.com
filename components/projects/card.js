@@ -2,14 +2,35 @@ import Link from "next/link";
 import React from "react";
 
 export default function Cards(props) {
+  const cardIndex0 =
+    "transition ease-in-out duration-300 z-40 scale-[1]  border-secondaryGray border flex bg-primaryGray rounded-md overflow-hidden";
+  const cardIndex1 =
+    "transition ease-in-out duration-300 absolute top-[35%] sm:top-[33%] blur-[0.5px] z-30 scale-[0.9] border-secondaryGray border flex bg-primaryGray rounded-md overflow-hidden ";
+
+  const cardIndex2 =
+    "transition ease-in-out duration-300 absolute top-[45%] z-20 blur-[1px] scale-[0.8] border-secondaryGray border flex bg-primaryGray rounded-md overflow-hidden";
+
+  const cardIndex3 =
+    "transition ease-in-out duration-300 absolute top-[55%] z-15 blur-[2px] scale-[0.7] border-secondaryGray border flex bg-primaryGray rounded-md overflow-hidden";
+
   return (
     <div
-      className="border boder-2 border-secondaryGray flex bg-primaryGray rounded-md overflow-hidden"
+      className={
+        props.projectIndex == 0 && props.projectIsOpen === false
+          ? cardIndex0
+          : props.projectIndex == 1 && props.projectIsOpen === false
+          ? cardIndex1
+          : props.projectIndex == 2 && props.projectIsOpen === false
+          ? cardIndex2
+          : props.projectIndex == 3 && props.projectIsOpen === false
+          ? cardIndex3
+          : cardIndex0
+      }
       key={props.projectIndex}
     >
       {/* Card Image */}
       <div
-        className="w-2/4 bg-cover bg-no-repeat border-r boder-2 border-secondaryGray bg-center"
+        className="w-2/4 bg-cover bg-no-repeat border-r border-secondaryGray bg-center"
         style={{
           backgroundImage: `url(${props.projectImageSource})`,
         }}
@@ -23,11 +44,13 @@ export default function Cards(props) {
         <p className="sm:text-base text-[12px] xs:text-sm line-clamp-2">
           {props.projectInfo}
         </p>
+
         <b>
           <Link
             href={props.projectURL}
             target={"_blank"}
-            className="flex space-x-1 sm:text-base text-[12px] xs:text-sm"
+            style={{ opacity: `${props.projectIsOpen !== true ? 0.2 : 1}` }}
+            className="flex space-x-1 sm:text-base text-[12px] xs:text-sm "
           >
             <span>LIVE SITE </span>
             <span>
