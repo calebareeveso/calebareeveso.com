@@ -7,12 +7,30 @@ export default function Index(props) {
     {
       name: "SNITCH AFRICA",
       URL: "https://www.snitchafrica.com/",
-      info: "Snitch Africa is Africa's leading digital media platform.",
+      info: "Snitch Africa is Gen Z Africans digital media platform.",
+      ImageSource: "/static/images/snitchafrica.png",
+    },
+    {
+      name: "SNITCH AFRICA",
+      URL: "https://www.snitchafrica.com/",
+      info: "Snitch Africa is Gen Z Africans digital media platform.",
+      ImageSource: "/static/images/snitchafrica.png",
+    },
+    {
+      name: "SNITCH AFRICA",
+      URL: "https://www.snitchafrica.com/",
+      info: "Snitch Africa is Gen Z Africans digital media platform.",
+      ImageSource: "/static/images/snitchafrica.png",
+    },
+    {
+      name: "SNITCH AFRICA",
+      URL: "https://www.snitchafrica.com/",
+      info: "Snitch Africa is Gen Z Africans digital media platform.",
       ImageSource: "/static/images/snitchafrica.png",
     },
   ];
   return (
-    <div>
+    <div className="grid grid-cols-1 gap-6 mb-6">
       {projectList.map(({ name, URL, info, ImageSource }, index) => (
         <ProjecCard
           projectName={name}

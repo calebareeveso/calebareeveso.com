@@ -9,7 +9,7 @@ export default function Cards(props) {
     >
       {/* Card Image */}
       <div
-        className="w-1/3 bg-cover bg-no-repeat border-r boder-2 border-secondaryGray bg-center"
+        className="w-2/4 xs:w-1/3 bg-cover bg-no-repeat border-r boder-2 border-secondaryGray bg-center"
         style={{
           backgroundImage: `url(${props.projectImageSource})`,
         }}
