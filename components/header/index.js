@@ -7,8 +7,11 @@ export default function Index(props) {
       <div className="h-[2rem] w-[2rem] mb-2 sm:mb-3 sm:w-[2rem] sm:h-[2rem] relative">
         <Image
           src={"/static/images/calebareveso_avatar.png"}
+          alt={"Caleb Areeveso"}
           layout={"fill"}
-          className=""
+          placeholder="blur"
+          blurDataURL={"/static/images/calebareveso_avatar.png"}
+          priority
         />
       </div>
       <h1 className="text-base">
