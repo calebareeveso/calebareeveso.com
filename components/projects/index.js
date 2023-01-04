@@ -37,8 +37,13 @@ export default function Index(props) {
   ];
   return (
     <div>
-      {projectList.map(({ name, URL, info }) => (
-        <ProjecCard projectName={name} projectURL={URL} projectInfo={info} />
+      {projectList.map(({ name, URL, info }, index) => (
+        <ProjecCard
+          projectName={name}
+          projectURL={URL}
+          projectInfo={info}
+          projectIndex={index}
+        />
       ))}
     </div>
   );
