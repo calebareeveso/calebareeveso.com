@@ -11,9 +11,13 @@ export default function Index(props) {
         Hi, I'm Caleb Areeveso, and I'm a college student from the UK with a
         passion for software engineering. From a young age, I've always been
         fascinated by technology and how it can be used to solve complex
-        problems. As I've grown older, my interest in coding has only continued
-        to grow, and I'm now dedicated to honing my skills and learning as much
-        as I can about the field.
+        problems.
+      </h2>
+      <br />
+      <h2>
+        As I've grown older, my interest in coding has only continued to grow,
+        and I'm now dedicated to honing my skills and learning as much as I can
+        about the field.
       </h2>
       <br />
       <h2>
