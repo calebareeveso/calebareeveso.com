@@ -7,10 +7,10 @@ export default function Index(props) {
   // list of projects
   const projectList = [
     {
-      name: "SNITCHAFRICA.COM",
-      URL: "https://www.snitchafrica.com/",
-      info: "Snitch Africa is Gen Z Africans digital media platform.",
-      ImageSource: "/static/images/snitchafrica.png",
+      name: "REFACTOREDU.CO",
+      URL: "https://www.refactoredu.co",
+      info: "An open-source platform for sharing and discovering roadmaps built help people of all ages in their pursuit of education and growth across all (STEAM) fields.",
+      ImageSource: "/static/images/refactoredu.png",
     },
     {
       name: "SNITCHAFRICA.COM",
