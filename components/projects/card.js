@@ -42,7 +42,6 @@ export default function Cards(props) {
               objectPosition="top"
               placeholder="blur"
               blurDataURL={props.projectImageSource}
-              priority
             />
           </div>
           <p className="sm:text-base text-[12px] xs:text-sm ">

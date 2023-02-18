@@ -9,7 +9,7 @@ export default function Index(props) {
     {
       name: "REFACTOREDU.CO",
       URL: "https://www.refactoredu.co",
-      info: "An open-source platform for sharing and discovering roadmaps built help people of all ages in their pursuit of education and growth across all (STEAM) fields.",
+      info: "An open-source platform for sharing and discovering roadmaps built to guide student in their pursuit of education and growth in all (STEAM) fields",
       ImageSource: "/static/images/refactoredu.png",
     },
     {
