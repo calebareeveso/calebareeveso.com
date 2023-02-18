@@ -12,7 +12,7 @@ export default function Cards(props) {
             href={props.projectURL}
             target={"_blank"}
             style={{ opacity: 1 }}
-            className="flex space-x-1.5 sm:text-base text-[12px] xs:text-sm "
+            className="flex space-x-1.5 sm:text-base text-[12px] xs:text-sm mt-0.5 sm:mt-0"
           >
             <em className="font-medium text-primary">{props.projectName}</em>
             <span>

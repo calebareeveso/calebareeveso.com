@@ -7,6 +7,12 @@ export default function Index(props) {
   // list of projects
   const projectList = [
     {
+      name: "EMBRACEMYWORLD.COM",
+      URL: "https://www.snitchafrica.com",
+      info: "A platform that is raising awareness on Autism, (ADHD), and Cerebral Palsy.",
+      ImageSource: "/static/images/embracemyworld.png",
+    },
+    {
       name: "REFACTOREDU.CO",
       URL: "https://www.refactoredu.co",
       info: "An open-source platform for sharing and discovering roadmaps built to guide student in their pursuit of education and growth in all (STEAM) fields",
@@ -14,21 +20,15 @@ export default function Index(props) {
     },
     {
       name: "SNITCHAFRICA.COM",
-      URL: "https://www.snitchafrica.com/",
-      info: "Snitch Africa is Gen Z Africans digital media platform.",
+      URL: "https://www.snitchafrica.com",
+      info: "A digital media platform built for Gen Z Africans",
       ImageSource: "/static/images/snitchafrica.png",
     },
     {
-      name: "SNITCHAFRICA.COM",
-      URL: "https://www.snitchafrica.com/",
-      info: "Snitch Africa is Gen Z Africans digital media platform.",
-      ImageSource: "/static/images/snitchafrica.png",
-    },
-    {
-      name: "SNITCHAFRICA.COM",
-      URL: "https://www.snitchafrica.com/",
-      info: "Snitch Africa is Gen Z Africans digital media platform.",
-      ImageSource: "/static/images/snitchafrica.png",
+      name: "OVERCOMERSCOLUMBUS.COM",
+      URL: "www.overcomerscolumbus.com",
+      info: "A website for the Overcomers Christian Center, a church based in Columbus, Ohio, United States",
+      ImageSource: "/static/images/overcomerscolumbus.png",
     },
   ];
   return (
