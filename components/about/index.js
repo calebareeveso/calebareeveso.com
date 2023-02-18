@@ -4,9 +4,9 @@ import React from "react";
 export default function Index(props) {
   return (
     <div>
-      <h1 className="text-base underline decoration-2 decoration-primary  decoration-dashed underline-offset-8 text-primary mb-4">
+      <h3 className="text-base underline decoration-2 decoration-primary  decoration-dashed underline-offset-8 text-primary mb-4">
         Introduction
-      </h1>
+      </h3>
       <h2>
         Hi, I'm Caleb Areeveso, and I'm a college student from the UK with a
         passion for software engineering. From a young age, I've always been
@@ -37,21 +37,38 @@ export default function Index(props) {
         </em>
       </h2>
       <br />
-      <h3>
-        Email me at{" "}
+      <h3 className="text-base underline decoration-2 decoration-primary  decoration-dashed underline-offset-8 text-primary mb-4">
+        Contact
+      </h3>
+      <h2 className="text-base my-2">
+        <span className="mr-1 font-extrabold text-primary">{"* "}</span>Email:{" "}
         <em className="font-medium text-primary">
           <Link href="mailto:hello@calebareeveso.com?&subject=I%20want%20to%20buddy%20up!&body=Hello%20Caleb,%20Let's%20buddy%20up!">
             hello@calebareeveso.com
           </Link>
-        </em>{" "}
-        if you want to buddy up [work on a project]. You can also find me on
-        Twitter at{" "}
+        </em>
+      </h2>
+      <h2 className="text-base my-2">
+        <span className="mr-1 font-extrabold text-primary">{"* "}</span>Twitter:{" "}
         <em className="font-medium text-primary">
           <Link href="https://twitter.com/calebareeveso" target={"_blank"}>
-            @calebareeveso.
+            @calebareeveso
           </Link>
         </em>
-      </h3>
+      </h2>
+      <h2 className="text-base my-2">
+        <span className="mr-1 font-extrabold text-primary">{"* "}</span>
+        Linkedin:{" "}
+        <em className="font-medium text-primary">
+          <Link
+            href="https://www.linkedin.com/in/caleb-areeveso/"
+            target={"_blank"}
+          >
+            @caleb-areeveso
+          </Link>
+        </em>
+      </h2>
+      <h3 className="mt-2">Reach out if you want to buddy up:)</h3>
     </div>
   );
 }
