@@ -41,6 +41,7 @@ export default function Index(props) {
       <div className="grid grid-cols-1 gap-5 xs:gap-6 ">
         {projectList.map(({ name, URL, info, ImageSource }, index) => (
           <ProjecCard
+            key={index}
             projectName={name}
             projectURL={URL}
             projectInfo={info}

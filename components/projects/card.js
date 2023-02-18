@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/legacy/image";
 export default function Cards(props) {
   return (
-    <div key={props.projectIndex}>
+    <div>
       {/* Card content */}
       <div className="flex space-x-2 items-start">
         <span className="mr-1 font-extrabold text-primary">{"* "}</span>
