@@ -24,7 +24,8 @@ export default function Index(props) {
         CALEB AREEVESO
       </h1>
       <h2 className="text-base my-4">
-        <span className="mr-2 font-extrabold">{">"}</span> England, UK {` `}
+        <span className="mr-1 font-extrabold text-primary">{"*"}</span> England,
+        UK {` `}
         {PageLoad && (
           <>
             [
