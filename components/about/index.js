@@ -4,7 +4,7 @@ import React from "react";
 export default function Index(props) {
   return (
     <div>
-      <h3 className="text-base underline decoration-2 decoration-primary  decoration-dashed underline-offset-8 text-primary mb-4">
+      <h3 className="text-base underline decoration-2 decoration-primary  decoration-dashed underline-offset-8 text-primary mb-6 sm:mb-8">
         Introduction
       </h3>
       <h2>
@@ -46,7 +46,7 @@ export default function Index(props) {
         </Link>
       </h2>
       <br />
-      <h3 className="text-base underline decoration-2 decoration-primary  decoration-dashed underline-offset-8 text-primary mb-4">
+      <h3 className="text-base underline decoration-2 decoration-primary  decoration-dashed underline-offset-8 text-primary mb-6 sm:mb-8">
         Contact
       </h3>
       <h2 className="text-base my-2">
