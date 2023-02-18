@@ -45,7 +45,7 @@ export default function Cards(props) {
               priority
             />
           </div>
-          <p className="sm:text-base text-[12px] xs:text-sm line-clamp-2">
+          <p className="sm:text-base text-[12px] xs:text-sm ">
             {props.projectInfo}
           </p>
         </div>
