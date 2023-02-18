@@ -20,27 +20,30 @@ export default function Index(props) {
           priority
         />
       </div> */}
-      <h1 className="text-base">
-        {" "}
-        <span className="underline decoration-dashed underline-offset-8 text-primary">
-          CALEB AREEVESO
-        </span>
+      <h1 className="text-base underline decoration-2 decoration-primary decoration-dashed underline-offset-8 text-primary">
+        CALEB AREEVESO
       </h1>
-      <h2 className="text-base my-3">
+      <h2 className="text-base my-4">
         <span className="mr-2 font-extrabold">{">"}</span> England, UK {` `}
         {PageLoad && (
           <>
             [
-            <Clock format={"h:mm:ss A"} ticking={true} timezone={"UK/GBR"} />]
+            <Clock
+              format={"h:mm:ss A"}
+              ticking={true}
+              timezone={"Europe/London"}
+            />
+            ]
           </>
         )}
       </h2>
 
-      <div className="h-[40rem] w-full sm:w-full  sm:h-[30rem] relative">
+      <div className="h-[20rem] w-full sm:w-full  sm:h-[30rem] relative">
         <Image
           src={"/static/images/caleb_areeveso.png"}
           alt={"Caleb Areeveso"}
-          layout={"fill"}
+          layout="fill"
+          objectFit="cover"
           placeholder="blur"
           blurDataURL={"/static/images/caleb_areeveso.png"}
           priority
