@@ -10,7 +10,7 @@ export default function Main({ children, ...props }) {
   return (
     <>
       <div className="wrapper">
-        <div className="max-w-2xl mx-auto container px-4 ">
+        <div className="max-w-2xl mx-auto container px-4">
           <div className="container mx-auto">
             <Head>
               {/* Favicons */}
