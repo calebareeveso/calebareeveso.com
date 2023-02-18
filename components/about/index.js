@@ -8,10 +8,11 @@ export default function Index(props) {
         Introduction
       </h3>
       <h2>
-        Hi, I'm Caleb Areeveso, and I'm a college student from the UK with a
-        passion for software engineering. From a young age, I've always been
-        fascinated by technology and how it can be used to solve complex
-        problems.
+        Hi, I'm <em className="font-medium text-primary">Caleb Areeveso</em>,
+        and I'm a college student from the UK with a passion for{" "}
+        <em className="font-medium text-primary">software engineering</em>. From
+        a young age, I've always been fascinated by technology and how it can be
+        used to solve complex problems.
       </h2>
       <br />
       <h2>
