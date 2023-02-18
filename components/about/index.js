@@ -23,22 +23,26 @@ export default function Index(props) {
       <h2>
         I love to take on new projects since they challenge me to improve and
         develop new skills. Here are some of my previous {` `}
-        <em className="font-medium text-primary inline">
-          <Link href="#projects">projects</Link>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="inline"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fillRule="evenodd"
-              d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
-            />
-          </svg>
-        </em>
+        <Link href="#projects">
+          {" "}
+          <em className="font-medium text-primary inline">
+            projects
+            <svg
+              viewBox="0 0 11 10"
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              fill="currentColor"
+              className="ml-1 inline"
+            >
+              <path
+                d="M10.0779 0.514719C10.0779 0.238774 9.85384 0.0150763 9.5775 0.0150763H5.07428C4.79794 0.0150763 4.57393 0.238774 4.57393 0.514719C4.57393 0.790664 4.79794 1.01436 5.07428 1.01436L9.07714 1.01436V5.0115C9.07714 5.28745 9.30116 5.51114 9.5775 5.51114C9.85384 5.51114 10.0779 5.28745 10.0779 5.0115V0.514719ZM1.43388 9.3533L9.9313 0.868019L9.22369 0.161418L0.726272 8.6467L1.43388 9.3533Z"
+                fill="#111111"
+                class="jsx-1567214789"
+              ></path>
+            </svg>
+          </em>
+        </Link>
       </h2>
       <br />
       <h3 className="text-base underline decoration-2 decoration-primary  decoration-dashed underline-offset-8 text-primary mb-4">
