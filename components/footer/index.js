@@ -9,20 +9,20 @@ export default function Index(props) {
   }, []);
 
   return (
-    <footer className="mt-10 ml-4">
-      <h1 className="text-base underline decoration-2 decoration-primary decoration-dashed underline-offset-8 text-primary">
+    <footer className="mt-10 mb-14 ml-4 ">
+      {/* <h1 className="text-base underline decoration-2 decoration-primary decoration-dashed underline-offset-8 text-primary">
         BUILT BY CALEB AREEVESO
-      </h1>
-      <h2 className="text-base my-4">
-        <span className="mr-1 font-extrabold text-primary">{"*"}</span> Website
-        is{" "}
+      </h1> */}
+      <h2 className="text-base">
+        <span className="mr-1 font-extrabold text-primary">{"* "}</span>See
+        website{" "}
         <Link
           href={`https://github.com/calebareeveso/calebareeveso.com`}
           target={`_blank`}
         >
           {" "}
           <em className="font-medium text-primary inline">
-            open source
+            code
             <svg
               viewBox="0 0 11 10"
               xmlns="http://www.w3.org/2000/svg"

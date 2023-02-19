@@ -7,7 +7,7 @@ export default function Cards(props) {
       {/* Card content */}
       <div className="flex space-x-2 items-start">
         <span className="mr-1 font-extrabold text-primary">{"* "}</span>
-        <div className="grid grid-cols-1 gap-3 w-full h-full pb-2 border-secondaryGray sm:pb-5 border-b border-dashed">
+        <div className="grid grid-cols-1 gap-3 w-full h-full pb-6 border-secondaryGray sm:pb-5 border-b border-dashed">
           <Link
             href={props.projectURL}
             target={"_blank"}

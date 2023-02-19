@@ -9,7 +9,7 @@ export default function Index(props) {
     {
       name: "EMBRACEMYWORLD.COM",
       URL: "https://www.embracemyworld.com",
-      info: "A platform that is raising awareness on Autism, (ADHD), and Cerebral Palsy.",
+      info: "A platform that is raising awareness on Autism, (ADHD), and Cerebral Palsy",
       ImageSource: "/static/images/embracemyworld.png",
     },
     {
@@ -32,7 +32,7 @@ export default function Index(props) {
     },
   ];
   return (
-    <div className="mb-6 relative" id="projects">
+    <div className=" relative" id="projects">
       <div className="flex justify-between ">
         <h3 className="text-base underline decoration-2 decoration-primary  decoration-dashed underline-offset-8 text-primary mb-6 sm:mb-8">
           Projects
