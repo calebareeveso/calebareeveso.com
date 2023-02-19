@@ -14,7 +14,7 @@ export default function Main({ children, ...props }) {
           <div className="container mx-auto">
             <Head>
               {/* canonical */}
-              <link rel="canonical" href="https://calebareeveso.com" />
+              <link rel="canonical" href="https://www.calebareeveso.com" />
               {/* Favicons */}
               <link
                 rel="apple-touch-icon"
