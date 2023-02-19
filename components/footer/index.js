@@ -15,14 +15,14 @@ export default function Index(props) {
       </h1>
       <h2 className="text-base my-4">
         <span className="mr-1 font-extrabold text-primary">{"*"}</span> Website
-        is open source,{" "}
+        is{" "}
         <Link
           href={`https://github.com/calebareeveso/calebareeveso.com`}
           target={`_blank`}
         >
           {" "}
           <em className="font-medium text-primary inline">
-            See code
+            open source
             <svg
               viewBox="0 0 11 10"
               xmlns="http://www.w3.org/2000/svg"

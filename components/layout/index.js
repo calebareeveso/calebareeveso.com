@@ -46,26 +46,20 @@ export default function Main({ children, ...props }) {
               <meta name="theme-color" content="#ffffff" />
 
               {/* Meta Tags */}
-              <title>Caleb Areeveso — Front-end Engineer </title>
-              <meta
-                name="title"
-                content="Caleb Areeveso — Front-end Engineer "
-              />
+              <title>Caleb Areeveso </title>
+              <meta name="title" content="Caleb Areeveso " />
               <meta
                 name="description"
-                content="Front-end Engineer - Developing web-based software with a lot of depth and detail in terms of both visuals and functionality"
+                content="A college student with a passion for software engineering and a desire to create innovative solutions that make a positive impact on the world. I am committed to continual learning and growth as a software engineer"
               />
 
               {/* Open Graph / Facebook */}
               <meta property="og:type" content="website" />
               <meta property="og:url" content="https://calebareeveso.com" />
-              <meta
-                property="og:title"
-                content="Caleb Areeveso — Front-end Engineer "
-              />
+              <meta property="og:title" content="Caleb Areeveso " />
               <meta
                 property="og:description"
-                content="Front-end Engineer - Developing web-based software with a lot of depth and detail in terms of both visuals and functionality"
+                content="A college student with a passion for software engineering and a desire to create innovative solutions that make a positive impact on the world. I am committed to continual learning and growth as a software engineer"
               />
               <meta
                 property="og:image"
@@ -77,13 +71,10 @@ export default function Main({ children, ...props }) {
                 property="twitter:url"
                 content="https://calebareeveso.com"
               />
-              <meta
-                property="twitter:title"
-                content="Caleb Areeveso — Front-end Engineer "
-              />
+              <meta property="twitter:title" content="Caleb Areeveso " />
               <meta
                 property="twitter:description"
-                content="Front-end Engineer - Developing web-based software with a lot of depth and detail in terms of both visuals and functionality"
+                content=" A college student with a passion for software engineering and a desire to create innovative solutions that make a positive impact on the world. I am committed to continual learning and growth as a software engineer"
               />
               <meta
                 property="twitter:image"
