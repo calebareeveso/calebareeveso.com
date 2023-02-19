@@ -8,7 +8,7 @@ export default function Index(props) {
   const projectList = [
     {
       name: "EMBRACEMYWORLD.COM",
-      URL: "https://www.snitchafrica.com",
+      URL: "https://www.embracemyworld.com",
       info: "A platform that is raising awareness on Autism, (ADHD), and Cerebral Palsy.",
       ImageSource: "/static/images/embracemyworld.png",
     },
@@ -26,7 +26,7 @@ export default function Index(props) {
     },
     {
       name: "OVERCOMERSCOLUMBUS.COM",
-      URL: "www.overcomerscolumbus.com",
+      URL: "https://www.overcomerscolumbus.com",
       info: "A website for the Overcomers Christian Center, a church based in Columbus, Ohio, United States",
       ImageSource: "/static/images/overcomerscolumbus.png",
     },

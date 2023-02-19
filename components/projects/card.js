@@ -34,15 +34,22 @@ export default function Cards(props) {
           </Link>
           {/* Card Image */}
           <div className="h-[20rem] w-full sm:w-full  sm:h-[36rem] relative">
-            <Image
-              src={props.projectImageSource}
-              alt={props.projectName}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="top"
-              placeholder="blur"
-              blurDataURL={props.projectImageSource}
-            />
+            <Link
+              href={props.projectURL}
+              target={"_blank"}
+              style={{ opacity: 1 }}
+              className="flex space-x-1.5 sm:text-base text-[12px] xs:text-sm mt-0.5 sm:mt-0"
+            >
+              <Image
+                src={props.projectImageSource}
+                alt={props.projectName}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="top"
+                placeholder="blur"
+                blurDataURL={props.projectImageSource}
+              />
+            </Link>
           </div>
           <p className="sm:text-base text-[12px] xs:text-sm ">
             {props.projectInfo}

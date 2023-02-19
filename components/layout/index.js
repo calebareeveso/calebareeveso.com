@@ -13,6 +13,8 @@ export default function Main({ children, ...props }) {
         <div className="max-w-2xl mx-auto container px-4">
           <div className="container mx-auto">
             <Head>
+              {/* canonical */}
+              <link rel="canonical" href="https://calebareeveso.com" />
               {/* Favicons */}
               <link
                 rel="apple-touch-icon"
