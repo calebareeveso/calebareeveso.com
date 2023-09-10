@@ -57,9 +57,9 @@ export default function Index(props) {
         </em>
       </h2>
       <h2 className="text-base my-2">
-        <span className="mr-1 font-extrabold text-primary">{"* "}</span>Twitter:{" "}
+        <span className="mr-1 font-extrabold text-primary">{"* "}</span>Github:{" "}
         <em className="font-medium text-primary">
-          <Link href="https://twitter.com/calebareeveso" target={"_blank"}>
+          <Link href="https://github.com/calebareeveso" target={"_blank"}>
             @calebareeveso
           </Link>
         </em>

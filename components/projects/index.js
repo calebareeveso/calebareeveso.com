@@ -7,10 +7,22 @@ export default function Index(props) {
   // list of projects
   const projectList = [
     {
+      name: "REVISIONROOM.LIVE",
+      URL: "https://www.revisionroom.live",
+      info: "A platform platform designed to bridge geographical and educational divides among students in England. It facilitates collaborative audio-based revision sessions, enabling students to learn from each other regardless of their backgrounds",
+      ImageSource: "/static/images/revisionroom_live.jpeg",
+    },
+    {
       name: "EMBRACEMYWORLD.COM",
       URL: "https://www.embracemyworld.com",
       info: "A platform that is raising awareness on Autism, (ADHD), and Cerebral Palsy",
       ImageSource: "/static/images/embracemyworld.png",
+    },
+    {
+      name: "QNA.CALEB.WORKS",
+      URL: "https://qna.caleb.works/",
+      info: "A web app that improves memory retention via active recall by enabling users to make custom Q&A collections, and its smart review system prompts users to revisit questions at specific intervals",
+      ImageSource: "/static/images/qna.jpg",
     },
     {
       name: "REFACTOREDU.CO",
