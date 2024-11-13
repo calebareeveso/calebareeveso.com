@@ -7,6 +7,18 @@ export default function Index(props) {
   // list of projects
   const projectList = [
     {
+      name: "WHIL.ST",
+      URL: "https://www.whil.st",
+      info: "Whil.st Earning From Guiding Others",
+      ImageSource: "/static/images/guide.jpeg",
+    },
+    {
+      name: "EXPECT.CHAT",
+      URL: "https://expect.chat",
+      info: "Chat With Your Future Self To Check In On Your Expectations",
+      ImageSource: "/static/images/expect.jpeg",
+    },
+    {
       name: "REVISIONROOM.LIVE",
       URL: "https://www.revisionroom.live",
       info: "A platform platform designed to bridge geographical and educational divides among students in England. It facilitates collaborative audio-based revision sessions, enabling students to learn from each other regardless of their backgrounds",
@@ -18,30 +30,18 @@ export default function Index(props) {
       info: "A platform that is raising awareness on Autism, (ADHD), and Cerebral Palsy",
       ImageSource: "/static/images/embracemyworld.png",
     },
-    {
-      name: "QNA.CALEB.WORKS",
-      URL: "https://qna.caleb.works/",
-      info: "A web app that improves memory retention via active recall by enabling users to make custom Q&A collections, and its smart review system prompts users to revisit questions at specific intervals",
-      ImageSource: "/static/images/qna.jpg",
-    },
-    {
-      name: "REFACTOREDU.CO",
-      URL: "https://www.refactoredu.co",
-      info: "An open-source platform for sharing and discovering roadmaps built to guide student in their pursuit of education and growth in all (STEAM) fields",
-      ImageSource: "/static/images/refactoredu.png",
-    },
-    {
-      name: "SNITCHAFRICA.COM",
-      URL: "https://www.snitchafrica.com",
-      info: "A digital media platform built for Gen Z Africans",
-      ImageSource: "/static/images/snitchafrica.png",
-    },
-    {
-      name: "OVERCOMERSCOLUMBUS.COM",
-      URL: "https://www.overcomerscolumbus.com",
-      info: "A website for the Overcomers Christian Center, a church based in Columbus, Ohio, United States",
-      ImageSource: "/static/images/overcomerscolumbus.png",
-    },
+    // {
+    //   name: "SNITCHAFRICA.COM",
+    //   URL: "https://www.snitchafrica.com",
+    //   info: "A digital media platform built for Gen Z Africans",
+    //   ImageSource: "/static/images/snitchafrica.png",
+    // },
+    // {
+    //   name: "OVERCOMERSCOLUMBUS.COM",
+    //   URL: "https://www.overcomerscolumbus.com",
+    //   info: "A website for the Overcomers Christian Center, a church based in Columbus, Ohio, United States",
+    //   ImageSource: "/static/images/overcomerscolumbus.png",
+    // },
   ];
   return (
     <div className=" relative" id="projects">

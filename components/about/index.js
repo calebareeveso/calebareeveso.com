@@ -8,42 +8,16 @@ export default function Index(props) {
         Introduction
       </h3>
       <h2>
-        Hi, I'm <em className="font-medium text-primary">Caleb Areeveso</em>,
-        and I'm a college student from the UK with a passion for{" "}
-        <em className="font-medium text-primary">software engineering</em>. From
-        a young age, I've always been fascinated by technology and how it can be
-        used to solve complex problems.
+        Hi, I'm Caleb Areeveso, a{" "}
+        <em className="font-medium text-primary">Computer Science</em> student
+        From based in London with a passion for{" "}
+        <em className="font-medium text-primary">software engineering.</em> I've
+        enjoyed collaborating with startups on product development and design,
+        turning innovative ideas into reality. I'm excited to connect and
+        explore <em className="font-medium text-primary">new opportunities</em>{" "}
+        to create and grow together!
       </h2>
-      <br />
-      <h2>
-        As I've grown older, my interest in coding has only continued to grow,
-        and I'm now dedicated to honing my skills and learning as much as I can
-        about the field.
-      </h2>
-      <br />
-      <h2>
-        I love to take on new projects since they challenge me to improve and
-        develop new skills. Here are some of my previous {` `}
-        <Link href="#projects">
-          {" "}
-          <em className="font-medium text-primary inline">
-            projects
-            <svg
-              viewBox="0 0 11 10"
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="12"
-              fill="currentColor"
-              className="ml-1 inline"
-            >
-              <path
-                d="M10.0779 0.514719C10.0779 0.238774 9.85384 0.0150763 9.5775 0.0150763H5.07428C4.79794 0.0150763 4.57393 0.238774 4.57393 0.514719C4.57393 0.790664 4.79794 1.01436 5.07428 1.01436L9.07714 1.01436V5.0115C9.07714 5.28745 9.30116 5.51114 9.5775 5.51114C9.85384 5.51114 10.0779 5.28745 10.0779 5.0115V0.514719ZM1.43388 9.3533L9.9313 0.868019L9.22369 0.161418L0.726272 8.6467L1.43388 9.3533Z"
-                fill="#111111"
-              ></path>
-            </svg>
-          </em>
-        </Link>
-      </h2>
+
       <br />
       <h3 className="text-base underline decoration-2 decoration-primary  decoration-dashed underline-offset-8 text-primary mb-6 sm:mb-8">
         Contact

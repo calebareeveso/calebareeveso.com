@@ -14,8 +14,7 @@ export default function Index(props) {
         BUILT BY CALEB AREEVESO
       </h1> */}
       <h2 className="text-base">
-        <span className="mr-1 font-extrabold text-primary">{"* "}</span>See
-        website{" "}
+        <span className="mr-1 font-extrabold text-primary">{"* "}</span>
         <Link
           href={`https://github.com/calebareeveso/calebareeveso.com`}
           target={`_blank`}

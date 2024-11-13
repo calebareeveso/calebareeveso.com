@@ -41,13 +41,13 @@ export default function Index(props) {
 
       <div className="h-[20rem] w-full sm:w-full  sm:h-[36rem] relative">
         <Image
-          src={"/static/images/caleb_areeveso.png"}
+          src={"/static/images/me.jpeg"}
           alt={"Caleb Areeveso"}
           layout="fill"
           objectFit="cover"
           objectPosition="top"
           placeholder="blur"
-          blurDataURL={"/static/images/caleb_areeveso.png"}
+          blurDataURL={"/static/images/me.jpeg"}
           priority
         />
       </div>
