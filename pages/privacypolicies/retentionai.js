@@ -2,61 +2,46 @@ import React from "react";
 
 export default function Retnetionai() {
   return (
-    <main className="bg-white text-gray-900">
-      <div className="max-w-3xl mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-4">
-          Privacy Policy For RetentionAI
-        </h1>
-        <p className="text-sm text-gray-600 mb-6">
-          Last updated: November 25, 2024
+    <main className="bg-gray-100 text-gray-800">
+      <div class="max-w-3xl mx-auto p-6 bg-white shadow-md mt-10">
+        <h1 class="text-3xl font-bold mb-4">Privacy Policy</h1>
+        <p class="text-sm text-gray-500 mb-6">
+          Last updated: November 24, 2024
         </p>
 
-        <p className="mb-4">
-          This Privacy Policy describes Our policies and procedures on the
-          collection, use, and disclosure of Your information when You use the
-          Service and tells You about Your privacy rights and how the law
-          protects You.
+        <p class="mb-4">
+          This Privacy Policy describes our policies and procedures on the
+          collection, use, and disclosure of your information when you use
+          RetentionAI and tells you about your privacy rights and how the law
+          protects you.
         </p>
 
-        <p className="mb-4">
-          We use Your Personal data to provide and improve the Service and to
-          serve advertisements. By using the Service, You agree to the
-          collection and use of information in accordance with this Privacy
-          Policy.
+        <p class="mb-4">
+          We use your data to provide and improve the Service. By using the
+          Service, you agree to the collection and use of information in
+          accordance with this Privacy Policy.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
+        <h2 class="text-2xl font-semibold mt-8 mb-4">
           Interpretation and Definitions
         </h2>
 
-        <h3 className="text-xl font-semibold mt-6 mb-2">Interpretation</h3>
-        <p className="mb-4">
+        <h3 class="text-xl font-semibold mt-6 mb-2">Interpretation</h3>
+        <p class="mb-4">
           The words of which the initial letter is capitalized have meanings
-          defined under the following conditions. The following definitions
-          shall have the same meaning regardless of whether they appear in
-          singular or in plural.
+          defined under the following conditions.
         </p>
 
-        <h3 className="text-xl font-semibold mt-6 mb-2">Definitions</h3>
-        <p className="mb-4">For the purposes of this Privacy Policy:</p>
-        <ul className="list-disc list-inside mb-4 space-y-2">
-          <li>
-            <strong>Account</strong> means a unique account created for You to
-            access our Service or parts of our Service.
-          </li>
-          <li>
-            <strong>Affiliate</strong> means an entity that controls, is
-            controlled by, or is under common control with a party, where
-            "control" means ownership of 50% or more of the shares.
-          </li>
+        <h3 class="text-xl font-semibold mt-6 mb-2">Definitions</h3>
+        <p class="mb-4">For the purposes of this Privacy Policy:</p>
+        <ul class="list-disc list-inside mb-4 space-y-2">
           <li>
             <strong>Application</strong> refers to <strong>RetentionAI</strong>,
             the software program provided by the Company.
           </li>
           <li>
             <strong>Company</strong> (referred to as either "the Company", "We",
-            "Us" or "Our" in this Agreement) refers to{" "}
-            <strong>RetentionAI</strong>.
+            "Us" or "Our" in this Agreement) refers to RetentionAI.
           </li>
           <li>
             <strong>Country</strong> refers to: United Kingdom
@@ -83,253 +68,197 @@ export default function Retnetionai() {
           </li>
           <li>
             <strong>You</strong> means the individual accessing or using the
-            Service, or the company, or other legal entity on behalf of which
-            such individual is accessing or using the Service, as applicable.
+            Service.
           </li>
         </ul>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
-          Collecting and Using Your Personal Data
+        <h2 class="text-2xl font-semibold mt-8 mb-4">
+          Collecting and Using Your Data
         </h2>
 
-        <h3 className="text-xl font-semibold mt-6 mb-2">
-          Types of Data Collected
-        </h3>
+        <h3 class="text-xl font-semibold mt-6 mb-2">Types of Data Collected</h3>
 
-        <h4 className="text-lg font-semibold mt-4 mb-2">Personal Data</h4>
-        <p className="mb-4">
-          While using Our Service, We may ask You to provide Us with certain
-          personally identifiable information that can be used to contact or
-          identify You.
+        <h4 class="text-lg font-semibold mt-4 mb-2">Personal Data</h4>
+        <p class="mb-4">
+          While using our Service, we may collect certain device identifiers
+          that are not linked to your identity. This includes:
+        </p>
+        <ul class="list-disc list-inside mb-4 space-y-2">
+          <li>Device ID</li>
+        </ul>
+        <p class="mb-4">
+          This data is collected to provide and improve the Service and is not
+          linked to your personal identity.
         </p>
 
-        <h4 className="text-lg font-semibold mt-4 mb-2">Usage Data</h4>
-        <p className="mb-4">
+        <h4 class="text-lg font-semibold mt-4 mb-2">Usage Data</h4>
+        <p class="mb-4">
           Usage Data is collected automatically when using the Service.
         </p>
-        <p className="mb-4">
-          Usage Data may include information such as Your Device's Internet
-          Protocol address (e.g. IP address), browser type, browser version, the
-          pages of our Service that You visit, the time and date of Your visit,
-          unique device identifiers, and other diagnostic data.
-        </p>
-        <p className="mb-4">
-          When You access the Service by or through a mobile device, We may
-          collect certain information automatically, including but not limited
-          to the type of mobile device You use, Your mobile device unique ID,
-          Your mobile operating system, and other diagnostic data.
+        <p class="mb-4">
+          Usage Data may include information such as your device's Internet
+          Protocol address (e.g., IP address), device type, operating system
+          version, the configuration of the app when utilizing our Service, the
+          time and date of your use of the Service, and other diagnostic data.
         </p>
 
-        <h4 className="text-lg font-semibold mt-4 mb-2">
-          Tracking Technologies and Cookies
+        <h4 class="text-lg font-semibold mt-4 mb-2">
+          Data Collected by Third-Party Services
         </h4>
-        <p className="mb-4">
-          We use Cookies and similar tracking technologies to track the activity
-          on Our Service and store certain information. Tracking technologies
-          used are beacons, tags, and scripts to collect and track information
-          and to improve and analyze Our Service.
+        <p class="mb-4">
+          We use third-party services to monitor and analyze the use of our
+          Service and to serve advertisements:
         </p>
-
-        <h4 className="text-lg font-semibold mt-4 mb-2">Advertising</h4>
-        <p className="mb-4">
-          We may use Service Providers to show advertisements to You to help
-          support and maintain Our Service.
-        </p>
-
-        <h5 className="text-base font-semibold mt-4 mb-2">Google AdMob</h5>
-        <p className="mb-4">
-          Google AdMob is an advertising service provided by Google Inc.
-        </p>
-        <p className="mb-4">
-          Google AdMob may collect information such as device identifiers,
-          location data, and other information as described in the Google
-          Privacy Policy.
-        </p>
-        <p className="mb-4">
-          You can opt-out from AdMob by following the instructions described by
-          Google:{" "}
-          <a
-            href="https://adssettings.google.com/authenticated"
-            className="text-blue-600 hover:underline"
-          >
-            Google Ad Settings
-          </a>
-        </p>
-        <p className="mb-4">
-          For more information on how Google uses the collected information,
-          please visit the{" "}
-          <a
-            href="https://www.google.com/policies/privacy/"
-            className="text-blue-600 hover:underline"
-          >
-            Google Privacy Policy
-          </a>
-          .
-        </p>
-
-        <h3 className="text-xl font-semibold mt-6 mb-2">
-          Use of Your Personal Data
-        </h3>
-        <p className="mb-4">
-          The Company may use Personal Data for the following purposes:
-        </p>
-        <ul className="list-disc list-inside mb-4 space-y-2">
+        <ul class="list-disc list-inside mb-4 space-y-2">
           <li>
-            <strong>To provide and maintain our Service</strong>, including to
+            <strong>Google AdMob:</strong> We use Google AdMob to serve ads
+            within the Application. AdMob may collect information such as device
+            type, operating system version, network provider, IP address, and
+            app usage data. This information is collected to provide
+            advertisements and analyze ad performance.{" "}
+            <strong>We do not personalize ads.</strong> For more information on
+            how Google collects and uses data, please visit{" "}
+            <a
+              href="https://policies.google.com/privacy"
+              class="text-blue-600 hover:underline"
+            >
+              Google's Privacy Policy
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://support.google.com/admob/answer/6128543"
+              class="text-blue-600 hover:underline"
+            >
+              Google AdMob Policy
+            </a>
+            .
+          </li>
+          <li>
+            <strong>PostHog:</strong> We use PostHog to collect anonymous usage
+            analytics to help us improve the Service. This data is not linked to
+            you personally and includes information such as feature usage and
+            interaction patterns. For more information, please visit{" "}
+            <a
+              href="https://posthog.com/privacy"
+              class="text-blue-600 hover:underline"
+            >
+              PostHog's Privacy Policy
+            </a>
+            .
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Use of Your Data</h3>
+        <p class="mb-4">
+          The Company may use the collected data for the following purposes:
+        </p>
+        <ul class="list-disc list-inside mb-4 space-y-2">
+          <li>
+            <strong>To provide and maintain our Service:</strong> Including to
             monitor the usage of our Service.
           </li>
           <li>
-            <strong>To manage Your Account</strong>: to manage Your registration
-            as a user of the Service.
+            <strong>To improve user experience:</strong> Analyzing usage
+            patterns to enhance functionality and features.
           </li>
           <li>
-            <strong>For the performance of a contract</strong>: the development,
-            compliance, and undertaking of the purchase contract for the
-            products, items, or services You have purchased.
+            <strong>For advertising:</strong> Serving non-personalized
+            advertisements through Google AdMob.
           </li>
           <li>
-            <strong>To contact You</strong>: To contact You by email, telephone
-            calls, SMS, or other equivalent forms of electronic communication.
-          </li>
-          <li>
-            <strong>To provide You</strong> with news, special offers, and
-            general information about other goods, services, and events.
-          </li>
-          <li>
-            <strong>To manage Your requests</strong>: To attend and manage Your
-            requests to Us.
-          </li>
-          <li>
-            <strong>To provide personalized advertisements and content</strong>:
-            We may use Your information to serve You with personalized
-            advertisements, including using third-party advertising partners
-            like Google AdMob.
-          </li>
-          <li>
-            <strong>For business transfers</strong>: We may use Your information
-            to evaluate or conduct a merger, divestiture, restructuring, or
-            other sale of some or all of Our assets.
-          </li>
-          <li>
-            <strong>For other purposes</strong>: We may use Your information for
-            data analysis, identifying usage trends, and to improve our Service.
+            <strong>For analytics:</strong> Using tools like PostHog to track
+            user interactions and improve our Service.
           </li>
         </ul>
 
-        <h3 className="text-xl font-semibold mt-6 mb-2">
-          Sharing Your Personal Data
-        </h3>
-        <p className="mb-4">
-          We may share Your personal information in the following situations:
+        <h3 class="text-xl font-semibold mt-6 mb-2">Retention of Your Data</h3>
+        <p class="mb-4">
+          We will retain Usage Data for internal analysis purposes. Usage Data
+          is generally retained for a shorter period, except when this data is
+          used to strengthen the security or to improve the functionality of our
+          Service.
         </p>
-        <ul className="list-disc list-inside mb-4 space-y-2">
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Transfer of Your Data</h3>
+        <p class="mb-4">
+          Your information, including Usage Data, may be transferred to — and
+          maintained on — computers located outside of your state, province,
+          country, or other governmental jurisdiction where the data protection
+          laws may differ from those of your jurisdiction.
+        </p>
+        <p class="mb-4">
+          Your consent to this Privacy Policy followed by your submission of
+          such information represents your agreement to that transfer.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Disclosure of Your Data</h3>
+        <p class="mb-4">
+          We may disclose Usage Data in the following situations:
+        </p>
+        <ul class="list-disc list-inside mb-4 space-y-2">
           <li>
-            <strong>With Service Providers</strong>: We may share Your personal
-            information with Service Providers to monitor and analyze the use of
+            <strong>With Service Providers:</strong> We may share Usage Data
+            with third-party Service Providers to monitor and analyze the use of
             our Service.
           </li>
           <li>
-            <strong>With Advertising Partners</strong>: We may share Your
-            information with third-party advertising partners, such as Google
-            AdMob, for delivering personalized advertisements to You.
-          </li>
-          <li>
-            <strong>For business transfers</strong>: We may share or transfer
-            Your personal information in connection with any merger or sale of
-            Company assets.
-          </li>
-          <li>
-            <strong>With Affiliates</strong>: We may share Your information with
-            Our affiliates.
-          </li>
-          <li>
-            <strong>With business partners</strong>: We may share Your
-            information with Our business partners to offer You certain products
-            or services.
-          </li>
-          <li>
-            <strong>With other users</strong>: when You share personal
-            information in public areas with other users.
-          </li>
-          <li>
-            <strong>With Your consent</strong>: We may disclose Your personal
-            information for any other purpose with Your consent.
+            <strong>For legal requirements:</strong> If required to do so by law
+            or in response to valid requests by public authorities.
           </li>
         </ul>
 
-        <h3 className="text-xl font-semibold mt-6 mb-2">
-          Retention of Your Personal Data
-        </h3>
-        <p className="mb-4">
-          The Company will retain Your Personal Data only for as long as is
-          necessary for the purposes set out in this Privacy Policy.
+        <h3 class="text-xl font-semibold mt-6 mb-2">Security of Your Data</h3>
+        <p class="mb-4">
+          The security of your data is important to us. While we strive to use
+          commercially acceptable means to protect your data, we cannot
+          guarantee its absolute security.
         </p>
 
-        <h3 className="text-xl font-semibold mt-6 mb-2">
-          Transfer of Your Personal Data
-        </h3>
-        <p className="mb-4">
-          Your information, including Personal Data, is processed at the
-          Company's operating offices and in any other places where the parties
-          involved are located.
+        <h2 class="text-2xl font-semibold mt-8 mb-4">Data Storage</h2>
+        <p class="mb-4">
+          All user data is stored locally on your device. We do not store any
+          personal data on our servers.
         </p>
 
-        <h3 className="text-xl font-semibold mt-6 mb-2">
-          Delete Your Personal Data
-        </h3>
-        <p className="mb-4">
-          You have the right to delete or request that We assist in deleting the
-          Personal Data that We have collected about You.
-        </p>
-
-        <h3 className="text-xl font-semibold mt-6 mb-2">
-          Disclosure of Your Personal Data
-        </h3>
-        <p className="mb-4">
-          Under certain circumstances, the Company may be required to disclose
-          Your Personal Data.
-        </p>
-
-        <h3 className="text-xl font-semibold mt-6 mb-2">
-          Security of Your Personal Data
-        </h3>
-        <p className="mb-4">
-          The security of Your Personal Data is important to Us, but no method
-          of transmission over the Internet is 100% secure.
-        </p>
-
-        <h2 className="text-2xl font-semibold mt-8 mb-4">Children's Privacy</h2>
-        <p className="mb-4">
+        <h2 class="text-2xl font-semibold mt-8 mb-4">Children's Privacy</h2>
+        <p class="mb-4">
           Our Service does not address anyone under the age of 13. We do not
-          knowingly collect personal information from anyone under 13.
+          knowingly collect personal data from anyone under the age of 13.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
+        <h2 class="text-2xl font-semibold mt-8 mb-4">
           Links to Other Websites
         </h2>
-        <p className="mb-4">
+        <p class="mb-4">
           Our Service may contain links to other websites that are not operated
-          by Us.
+          by us. We strongly advise you to review the Privacy Policy of every
+          site you visit.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
-          Changes to this Privacy Policy
+        <h2 class="text-2xl font-semibold mt-8 mb-4">
+          Changes to This Privacy Policy
         </h2>
-        <p className="mb-4">
-          We may update Our Privacy Policy from time to time.
+        <p class="mb-4">
+          We may update our Privacy Policy from time to time. We will notify you
+          of any changes by posting the new Privacy Policy on this page.
+        </p>
+        <p class="mb-4">
+          You are advised to review this Privacy Policy periodically for any
+          changes. Changes to this Privacy Policy are effective when they are
+          posted on this page.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">Contact Us</h2>
-        <p className="mb-4">
-          If you have any questions about this Privacy Policy, You can contact
+        <h2 class="text-2xl font-semibold mt-8 mb-4">Contact Us</h2>
+        <p class="mb-4">
+          If you have any questions about this Privacy Policy, you can contact
           us:
         </p>
-        <ul className="list-disc list-inside mb-4 space-y-2">
+        <ul class="list-disc list-inside mb-4">
           <li>
             By email:{" "}
             <a
               href="mailto:hello@calebareeveso.com"
-              className="text-blue-600 hover:underline"
+              class="text-blue-600 hover:underline"
             >
               hello@calebareeveso.com
             </a>
