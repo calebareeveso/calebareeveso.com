@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Retnetionai() {
   return (
-    <main className="bg-gray-100 text-gray-800">
-      <div class="max-w-3xl mx-auto p-6 bg-white shadow-md mt-10">
+    <main className="text-gray-800">
+      <div class="max-w-3xl mx-auto p-6 bg-white mt-10">
         <h1 class="text-3xl font-bold mb-4">Privacy Policy</h1>
         <p class="text-sm text-gray-500 mb-6">
           Last updated: November 24, 2024
