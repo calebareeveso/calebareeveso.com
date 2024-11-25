@@ -10,7 +10,7 @@ export default function Index(props) {
       <h2>
         Hi, I'm Caleb Areeveso, a{" "}
         <em className="font-medium text-primary">Computer Science</em> student
-        From based in London with a passion for{" "}
+        based in London with a passion for{" "}
         <em className="font-medium text-primary">software engineering.</em> I've
         enjoyed collaborating with startups on product development and design,
         turning innovative ideas into reality. I'm excited to connect and
