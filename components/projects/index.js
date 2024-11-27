@@ -28,7 +28,7 @@ export default function Index(props) {
       name: "EMBRACEMYWORLD.COM",
       URL: "https://www.embracemyworld.com",
       info: "A platform that is raising awareness on Autism, (ADHD), and Cerebral Palsy",
-      ImageSource: "/static/images/embracemyworld.jpeg",
+      ImageSource: "/static/images/embracemyworld.png",
     },
     // {
     //   name: "SNITCHAFRICA.COM",
