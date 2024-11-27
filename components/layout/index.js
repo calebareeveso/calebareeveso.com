@@ -10,7 +10,7 @@ export default function Main({ children, ...props }) {
   return (
     <>
       <div className="wrapper">
-        <div className="max-w-2xl mx-auto container px-4">
+        <div className="max-w-xl mx-auto container px-4">
           <div className="container mx-auto">
             <Head>
               {/* canonical */}
@@ -65,7 +65,7 @@ export default function Main({ children, ...props }) {
               />
               <meta
                 property="og:image"
-                content="https://calebareeveso.com/static/images/calebareveso_banner.png"
+                content="https://calebareeveso.com/static/images/calebareveso_banner.jpg"
               />
               {/* Twitter */}
               <meta property="twitter:card" content="summary_large_image" />
@@ -80,7 +80,7 @@ export default function Main({ children, ...props }) {
               />
               <meta
                 property="twitter:image"
-                content="https://calebareeveso.com/static/images/calebareveso_banner.png"
+                content="https://calebareeveso.com/static/images/calebareveso_banner.jpg"
               />
               {/* Google Site Verification */}
               <meta

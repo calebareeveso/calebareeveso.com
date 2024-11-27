@@ -7,9 +7,9 @@ export default function Index(props) {
   // list of projects
   const projectList = [
     {
-      name: "WHIL.ST",
-      URL: "https://www.whil.st",
-      info: "Whil.st Earning From Guiding Others",
+      name: "MAKE.GUIDE",
+      URL: "https://www.make.guide",
+      info: "Make valuable guides, help others learn, and earn from your knowledge — all in one place!",
       ImageSource: "/static/images/guide.jpeg",
     },
     {
@@ -21,14 +21,14 @@ export default function Index(props) {
     {
       name: "REVISIONROOM.LIVE",
       URL: "https://www.revisionroom.live",
-      info: "A platform platform designed to bridge geographical and educational divides among students in England. It facilitates collaborative audio-based revision sessions, enabling students to learn from each other regardless of their backgrounds",
+      info: "An audio-based platform helping students in England learn together, overcoming geographical and educational gaps",
       ImageSource: "/static/images/revisionroom_live.jpeg",
     },
     {
       name: "EMBRACEMYWORLD.COM",
       URL: "https://www.embracemyworld.com",
       info: "A platform that is raising awareness on Autism, (ADHD), and Cerebral Palsy",
-      ImageSource: "/static/images/embracemyworld.png",
+      ImageSource: "/static/images/embracemyworld.jpeg",
     },
     // {
     //   name: "SNITCHAFRICA.COM",
@@ -45,22 +45,28 @@ export default function Index(props) {
   ];
   return (
     <div className=" relative" id="projects">
-      <div className="flex justify-between ">
-        <h3 className="text-base underline decoration-2 decoration-primary  decoration-dashed underline-offset-8 text-primary mb-6 sm:mb-8">
-          Projects
-        </h3>
-      </div>
-      <div className="grid grid-cols-1 gap-5 xs:gap-6 ">
-        {projectList.map(({ name, URL, info, ImageSource }, index) => (
-          <ProjecCard
-            key={index}
-            projectName={name}
-            projectURL={URL}
-            projectInfo={info}
-            projectIndex={index}
-            projectImageSource={ImageSource}
-          />
-        ))}
+      {/* 08 */}
+      <div className="flex items-start space-x-4">
+        {/*  */}
+        <div>
+          <p className="text-base font-mono text-secondary">08</p>
+        </div>
+        {/*  */}
+        <div className="space-y-1">
+          <p className="text-base text-black">My Hustles</p>
+          <div className="grid grid-cols-1 gap-5 xs:gap-6 pt-2">
+            {projectList.map(({ name, URL, info, ImageSource }, index) => (
+              <ProjecCard
+                key={index}
+                projectName={name}
+                projectURL={URL}
+                projectInfo={info}
+                projectIndex={index}
+                projectImageSource={ImageSource}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 <a href="http://calebareeveso.com/">
-  <img alt="I'm Caleb, a college student from the UK with a passion for software engineering. I'm constantly learning and exploring the world of code, and I hope to one day create innovative solutions that make a real difference in people's lives" src="http://calebareeveso.com/static/images/calebareveso_banner.png">
+  <img alt="I'm Caleb, a college student from the UK with a passion for software engineering. I'm constantly learning and exploring the world of code, and I hope to one day create innovative solutions that make a real difference in people's lives" src="http://calebareeveso.com/static/images/calebareveso_banner.jpg">
   </a>
   <a href="http://calebareeveso.com/">
   <h1 align="left">calebareeveso.com</h1>

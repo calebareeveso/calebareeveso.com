@@ -9,7 +9,7 @@ export default function Index(props) {
   }, []);
 
   return (
-    <header className="mt-10 sm:mt-20">
+    <header className="mt-6 sm:mt-8">
       {/* <div className="h-[2rem] w-[2rem] mb-2 sm:mb-3 sm:w-[2rem] sm:h-[2rem] relative">
         <Image
           src={"/static/images/calebareveso_avatar.png"}
@@ -20,37 +20,78 @@ export default function Index(props) {
           priority
         />
       </div> */}
-      <h1 className="text-base underline decoration-2 decoration-primary decoration-dashed underline-offset-8 text-primary">
-        CALEB AREEVESO
-      </h1>
-      <h2 className="text-base my-4">
-        <span className="mr-1 font-extrabold text-primary">{"*"}</span> England,
-        UK {` `}
-        {PageLoad && (
-          <>
-            [
-            <Clock
-              format={"h:mm:ss A"}
-              ticking={true}
-              timezone={"Europe/London"}
-            />
-            ]
-          </>
-        )}
-      </h2>
-
-      <div className="h-[20rem] w-full sm:w-full  sm:h-[36rem] relative">
-        <Image
-          src={"/static/images/me.png"}
-          alt={"Caleb Areeveso"}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="top"
-          placeholder="blur"
-          blurDataURL={"/static/images/me.png"}
-          priority
-        />
-      </div>
+      <section className="space-y-6">
+        {/* 01 */}
+        <div className="flex items-start space-x-4">
+          {/*  */}
+          <div>
+            <p className="text-base font-mono text-secondary">01</p>
+          </div>
+          {/*  */}
+          <div className="space-y-1">
+            <p className="text-base text-black">Name</p>
+            <h1 className="text-base text-secondary">Caleb Areeveso</h1>
+          </div>
+        </div>
+        {/* 02 */}
+        <div className="flex items-start space-x-4">
+          {/*  */}
+          <div>
+            <p className="text-base font-mono text-secondary">02</p>
+          </div>
+          {/*  */}
+          <div className="space-y-1">
+            <p className="text-base text-black">Location</p>
+            <h2 className="text-base mb-4 mt-2 text-secondary">
+              England, UK {` `}
+              {PageLoad && (
+                <span className="border-[1px] text-secondary/20 border-secondary/5 px-1 py-0.5 rounded-md">
+                  <Clock
+                    format={"h:mm:ss A"}
+                    ticking={true}
+                    timezone={"Europe/London"}
+                  />
+                </span>
+              )}
+            </h2>
+          </div>
+        </div>
+        {/* 03 */}
+        <div className="flex items-start space-x-4">
+          {/*  */}
+          <div>
+            <p className="text-base font-mono text-secondary">03</p>
+          </div>
+          {/*  */}
+          <div className="space-y-1">
+            <p className="text-base text-black">Status</p>
+            <h2 className="text-base mb-4 mt-2 text-secondary">CS undergrad</h2>
+          </div>
+        </div>
+        {/* 04 */}
+        <div className="flex items-start space-x-4">
+          {/*  */}
+          <div>
+            <p className="text-base font-mono text-secondary">04</p>
+          </div>
+          {/*  */}
+          <div className="space-y-3 flex-grow">
+            <p className="text-base text-black">Face Card</p>
+            <div className="h-[20rem] w-full sm:w-full  sm:h-[30rem] relative">
+              <Image
+                src={"/static/images/me.jpeg"}
+                alt={"Caleb Areeveso"}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="top"
+                placeholder="blur"
+                blurDataURL={"/static/images/me.jpeg"}
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </header>
   );
 }
