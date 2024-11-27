@@ -16,7 +16,7 @@
 
 ## Introduction
 
-I'm Caleb, a college student from the UK with a passion for software engineering. I'm constantly learning and exploring the world of code, and I hope to one day create innovative solutions that make a real difference in people's lives
+Caleb Areeveso is a Computer Science student based in London with a passion for software engineering. I've enjoyed collaborating with startups on product development and design, turning innovative ideas into reality. I'm excited to connect and explore new opportunities to create and grow together!
 
 ## Tech Stack
 

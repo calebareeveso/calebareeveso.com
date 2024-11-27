@@ -52,7 +52,7 @@ export default function Main({ children, ...props }) {
               <meta name="title" content="Caleb Areeveso " />
               <meta
                 name="description"
-                content="A college student with a passion for software engineering and a desire to create innovative solutions that make a positive impact on the world. I am committed to continual learning and growth as a software engineer"
+                content="Caleb Areeveso is a Computer Science student based in London with a passion for software engineering. I've enjoyed collaborating with startups on product development and design, turning innovative ideas into reality. I'm excited to connect and explore new opportunities to create and grow together!"
               />
 
               {/* Open Graph / Facebook */}
