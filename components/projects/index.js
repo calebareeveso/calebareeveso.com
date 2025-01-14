@@ -13,6 +13,13 @@ export default function Index(props) {
       ImageSource: "/static/images/guide.jpeg",
     },
     {
+      name: "RETENTION AI",
+      URL: "https://retentionai.app",
+      info: "Retain More, Forget Less with RetentionAI",
+      ImageSource: "/static/images/retentionai.jpeg",
+    },
+
+    {
       name: "EXPECT.CHAT",
       URL: "https://expect.chat",
       info: "Chat With Your Future Self To Check In On Your Expectations",
