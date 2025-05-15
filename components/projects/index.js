@@ -7,11 +7,12 @@ export default function Index(props) {
   // list of projects
   const projectList = [
     {
-      name: "MAKE.GUIDE",
-      URL: "https://www.make.guide",
-      info: "Make valuable guides, help others learn, and earn from your knowledge — all in one place!",
-      ImageSource: "/static/images/guide.jpeg",
+      name: "QUESTIONEE.AI",
+      URL: "https://www.questionee.ai",
+      info: "An AI writing partner that asks you questions and offers clear choices before writing.",
+      ImageSource: "/static/images/questionee_ai.jpeg",
     },
+
     {
       name: "RETENTION AI",
       URL: "https://retentionai.app",
@@ -24,6 +25,12 @@ export default function Index(props) {
       URL: "https://expect.chat",
       info: "Chat With Your Future Self To Check In On Your Expectations",
       ImageSource: "/static/images/expect.jpeg",
+    },
+    {
+      name: "MAKE.GUIDE",
+      URL: "https://www.make.guide",
+      info: "Make valuable guides, help others learn, and earn from your knowledge — all in one place!",
+      ImageSource: "/static/images/guide.jpeg",
     },
     {
       name: "REVISIONROOM.LIVE",

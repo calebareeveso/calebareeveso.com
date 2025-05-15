@@ -38,7 +38,7 @@ export default function Cards(props) {
             {props.projectInfo}
           </p>
           {/* Card Image */}
-          <div className="h-[20rem] w-full sm:w-full  sm:h-[36rem] relative">
+          <div className="h-[20rem] w-full sm:w-full  sm:h-[30rem] relative">
             <Link
               href={props.projectURL}
               target={"_blank"}
