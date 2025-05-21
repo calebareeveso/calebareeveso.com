@@ -33,10 +33,10 @@ export default function Index(props) {
       ImageSource: "/static/images/guide.jpeg",
     },
     {
-      name: "REVISIONROOM.LIVE",
-      URL: "https://www.revisionroom.live",
+      name: "revisionrooms.LIVE",
+      URL: "https://www.revisionrooms.live",
       info: "An audio-based platform helping students in England learn together, overcoming geographical and educational gaps",
-      ImageSource: "/static/images/revisionroom_live.jpeg",
+      ImageSource: "/static/images/revisionrooms_live.jpeg",
     },
     {
       name: "EMBRACEMYWORLD.COM",
