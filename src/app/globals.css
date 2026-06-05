@@ -35,3 +35,42 @@ body {
 .text-gray {
   color: #0000004d;
 }
+
+/* Shockwave ripple around the newsletter input when arrived at via #newsletter.
+   A ::before ring (slightly larger than the field) scales from small to large
+   while fading, so it reads as a wave radiating outward. */
+/* Expand by equal pixels on every side (not transform: scale, which would grow
+   width/height proportionally and over-stretch a wide input sideways). */
+@keyframes newsletter-ripple {
+  from {
+    opacity: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  to {
+    opacity: 0;
+    top: -14px;
+    right: -14px;
+    bottom: -14px;
+    left: -14px;
+  }
+}
+
+.newsletter-ripple-on::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* starts at the input's exact width/height */
+  z-index: 0; /* sits behind the input */
+  border-radius: 0.5rem;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  animation: newsletter-ripple 1.8s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .newsletter-ripple-on::before {
+    content: none;
+  }
+}

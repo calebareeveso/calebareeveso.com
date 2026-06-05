@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -12,6 +12,18 @@ export default function NewsletterForm({
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<Status>("idle");
+  const [pulse, setPulse] = useState(false);
+
+  // When the page is reached via #newsletter, draw attention to the input with
+  // a shockwave until the visitor starts entering their email.
+  useEffect(() => {
+    function check() {
+      if (window.location.hash === "#newsletter") setPulse(true);
+    }
+    check();
+    window.addEventListener("hashchange", check);
+    return () => window.removeEventListener("hashchange", check);
+  }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -38,18 +50,24 @@ export default function NewsletterForm({
         <label htmlFor="newsletter-email" className="sr-only">
           Email address
         </label>
-        <input
-          id="newsletter-email"
-          type="email"
-          name="email"
-          required
-          autoComplete="email"
-          placeholder="you@email.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          disabled={status === "loading"}
-          className="flex-1 bg-white text-primary text-base border-[1px] border-secondary/10 rounded-md px-2 py-1 outline-none focus:border-secondary/30 transition-colors duration-300 disabled:opacity-50"
-        />
+        <div className={`relative flex-1 ${pulse ? "newsletter-ripple-on" : ""}`}>
+          <input
+            id="newsletter-email"
+            type="email"
+            name="email"
+            required
+            autoComplete="email"
+            placeholder="you@email.com"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setPulse(false);
+            }}
+            onFocus={() => setPulse(false)}
+            disabled={status === "loading"}
+            className="relative z-10 w-full bg-white text-primary text-base border-[1px] border-secondary/10 rounded-md px-2 py-1 outline-none focus:border-secondary/30 transition-colors duration-300 disabled:opacity-50"
+          />
+        </div>
         {/* Honeypot — hidden from real users, tempting to bots. */}
         <div
           aria-hidden="true"

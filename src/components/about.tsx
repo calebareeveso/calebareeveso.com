@@ -11,8 +11,8 @@ export default function About() {
         <div className="gap-2 ">
           <p className="text-base text-black">Bio</p>
           <h2 className="text-base mt-2 text-secondary">
-            I&apos;m building AndroidX AppFunctions at Google for summer 2026
-            and exploring how AI agents can safely integrate with it.
+            I&apos;m building with AndroidX AppFunctions at Google for summer
+            2026 and exploring how AI agents can safely integrate with it.
           </h2>
         </div>
       </div>

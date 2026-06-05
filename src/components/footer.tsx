@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="gap-2 ">
           <p className="text-base text-black">Credit</p>
           <h2 className="text-base mt-2 text-secondary gap-2">
-            <span>By yours truly</span>
+            <span>By yours truly </span>
             <span className="hover:text-primary duration-300 transition-colors border-[1px] text-secondary/60 border-secondary/10 px-1 py-0.5 rounded-md">
               <Link
                 href="https://github.com/calebareeveso/calebareeveso.com"
@@ -30,7 +30,7 @@ export default function Footer() {
           <p className="text-base font-mono text-secondary">11</p>
         </div>
         <div className="gap-2 ">
-          <p className="text-base text-black">© 2024</p>
+          <p className="text-base text-black">© {new Date().getFullYear()}</p>
         </div>
       </div>
     </footer>
