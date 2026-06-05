@@ -1,45 +1,36 @@
-<a href="http://calebareeveso.com/">
-  <img alt="I'm Caleb, a college student from the UK with a passion for software engineering. I'm constantly learning and exploring the world of code, and I hope to one day create innovative solutions that make a real difference in people's lives" src="http://calebareeveso.com/static/images/calebareveso_banner.jpg">
-  </a>
-  <a href="http://calebareeveso.com/">
-  <h1 align="left">calebareeveso.com</h1>
-  </a>
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-<p align="left">
-  <a href="https://linkedin.com/calebareeveso">
-   <img alt="linkedin Follow" src="https://img.shields.io/twitter/follow/calebareeveso?color=3A3A3A&logo=linkedin&style=for-the-badge">
-  </a>
-  <a href="https://twitter.com/calebareeveso">
-   <img alt="twitter Follow" src="https://img.shields.io/twitter/follow/calebareeveso?color=3A3A3A&logo=twitter&style=for-the-badge">
-  </a>
-</p>
+## Getting Started
 
-## Introduction
-
-Caleb Areeveso is a Computer Science student based in London with a passion for software engineering. I've enjoyed collaborating with startups on product development and design, turning innovative ideas into reality. I'm excited to connect and explore new opportunities to create and grow together!
-
-## Tech Stack
-
-- Framework: Next.js
-- Styling: Tailwind CSS
-- Deployment: Vercel
-
-## Running Locally
-
-Clone the repository, install the dependencies and start the application
+First, run the development server:
 
 ```bash
-git clone git@github.com/calebareeveso/calebareeveso.com.git
-npm install
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## LICENSE
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- This code may be freely used for inspiration.
-- Please do not directly duplicate it.
-- Please acknowledge the author.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Author
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Caleb Areeveso ([@calebareeveso](https://twitter.com/calebareeveso))
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
