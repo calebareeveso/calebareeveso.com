@@ -41,6 +41,7 @@ export default function BlogPage() {
                     </Link>
                     <p className="text-[12.5px] font-mono text-secondary/60">
                       {formatDate(post.date)}
+                      {post.writing && <span className="ml-2 uppercase">· writing</span>}
                     </p>
                     <p className="text-base text-secondary">
                       {post.description}

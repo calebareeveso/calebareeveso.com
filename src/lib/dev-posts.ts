@@ -8,8 +8,12 @@ export type SavePostInput = {
   description: string;
   date: string;
   published: boolean;
+  writing: boolean;
   content: string;
 };
+
+/** Body committed for a "writing" (title-only) post; the real body stays local. */
+export const WRITING_PLACEHOLDER = "_This post is being written. Check back soon._";
 
 /** Lowercase kebab-case, alphanumerics + dashes only. */
 export function sanitizeSlug(raw: string): string {
@@ -30,7 +34,10 @@ export function validateSavePayload(body: unknown): string | null {
   if (typeof b.date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(b.date))
     return "Date must be YYYY-MM-DD.";
   if (typeof b.published !== "boolean") return "Published must be a boolean.";
+  if (typeof b.writing !== "boolean") return "Writing must be a boolean.";
+  // In writing mode the body is withheld from the commit, so it may be empty.
   if (typeof b.content !== "string") return "Content is required.";
+  if (b.writing !== true && b.content.trim() === "") return "Content is required.";
   return null;
 }
 
@@ -58,10 +65,14 @@ export function writePost(input: SavePostInput): { slug: string; filePath: strin
     `description: ${JSON.stringify(input.description)}`,
     `date: ${JSON.stringify(input.date)}`,
     `published: ${input.published}`,
+    `writing: ${input.writing}`,
     "---",
   ].join("\n");
 
-  const body = input.content.replace(/\r\n/g, "\n").trimEnd();
+  // Writing mode commits only the title/metadata; the body stays in the local
+  // draft until a full publish.
+  const rawBody = input.writing ? WRITING_PLACEHOLDER : input.content;
+  const body = rawBody.replace(/\r\n/g, "\n").trimEnd();
   const file = `${frontmatter}\n\n${body}\n`;
 
   fs.mkdirSync(POSTS_DIR, { recursive: true });

@@ -8,6 +8,8 @@ export type BlogPost = {
   description: string;
   date: string;
   published: boolean;
+  /** Title-only "currently writing" post — body is withheld until full publish. */
+  writing: boolean;
   filePath: string;
   content: string;
 };
@@ -40,6 +42,7 @@ function readPostFile(fileName: string): BlogPost | null {
     description: data.description as string,
     date: data.date as string,
     published: data.published as boolean,
+    writing: data.writing === true,
     filePath,
     content,
   };
