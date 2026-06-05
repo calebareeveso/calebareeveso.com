@@ -51,3 +51,60 @@ export async function sendEmail({ to, subject, html, text, headers }: SendEmailI
 
   return data;
 }
+
+export type BatchEntry = {
+  to: string;
+  subject: string;
+  html: string;
+  text: string;
+  headers?: Record<string, string>;
+};
+
+function chunk<T>(items: T[], size: number): T[][] {
+  const out: T[][] = [];
+  for (let i = 0; i < items.length; i += size) {
+    out.push(items.slice(i, i + size));
+  }
+  return out;
+}
+
+/**
+ * Send one distinct email per recipient using Resend's batch API (≤100 per
+ * call). Each recipient gets their own `to`, so this is not a bulk CC/BCC.
+ * Returns how many were accepted vs failed.
+ */
+export async function sendBatch(entries: BatchEntry[]): Promise<{ sent: number; failed: number }> {
+  if (entries.length === 0) return { sent: 0, failed: 0 };
+
+  const from = getFrom();
+  const resend = getResend();
+
+  let sent = 0;
+  let failed = 0;
+
+  for (const batch of chunk(entries, 100)) {
+    const payload = batch.map((e) => ({
+      from,
+      to: [e.to],
+      subject: e.subject,
+      html: e.html,
+      text: e.text,
+      headers: e.headers,
+    }));
+
+    try {
+      const { error } = await resend.batch.send(payload);
+      if (error) {
+        failed += batch.length;
+        console.error(`[email] batch send failed: ${error.name} - ${error.message}`);
+      } else {
+        sent += batch.length;
+      }
+    } catch (err) {
+      failed += batch.length;
+      console.error("[email] batch send threw:", (err as Error).message);
+    }
+  }
+
+  return { sent, failed };
+}

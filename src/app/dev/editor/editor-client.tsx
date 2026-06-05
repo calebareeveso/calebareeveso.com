@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { markdown } from "@codemirror/lang-markdown";
 import MdxContent from "@/components/mdx/mdx-content";
+import EmailModal from "./email-modal";
 
 const CodeMirror = dynamic(() => import("@uiw/react-codemirror"), { ssr: false });
 
@@ -68,6 +69,7 @@ export default function EditorClient() {
 
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
+  const [emailOpen, setEmailOpen] = useState(false);
 
   const loadedRef = useRef(false);
 
@@ -339,6 +341,7 @@ export default function EditorClient() {
             {preview ? "Edit" : "Preview"}
           </button>
           <button className={btn} onClick={publish} disabled={busy}>Publish</button>
+          <button className={btn} onClick={() => setEmailOpen(true)} disabled={busy}>Email</button>
           <button className={btn} onClick={deleteCurrent} disabled={busy}>Delete</button>
         </div>
       </div>
@@ -443,6 +446,16 @@ export default function EditorClient() {
           </div>
         </main>
       </div>
+
+      {emailOpen && (
+        <EmailModal
+          onClose={() => setEmailOpen(false)}
+          title={title}
+          description={description}
+          slug={slug}
+          writing={writing}
+        />
+      )}
     </div>
   );
 }
