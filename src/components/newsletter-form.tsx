@@ -1,8 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Status = "idle" | "loading" | "success" | "error";
+
+// How many pixels the ripple band extends past the input on every side.
+const RIPPLE_PX = 10;
 
 export default function NewsletterForm({
   source = "homepage",
@@ -12,7 +15,8 @@ export default function NewsletterForm({
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<Status>("idle");
-  const [pulse, setPulse] = useState(false);
+  const [pulse, setPulse] = useState(true);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   // When the page is reached via #newsletter, draw attention to the input with
   // a shockwave until the visitor starts entering their email.
@@ -23,6 +27,26 @@ export default function NewsletterForm({
     check();
     window.addEventListener("hashchange", check);
     return () => window.removeEventListener("hashchange", check);
+  }, []);
+
+  // Compute per-axis scale factors so the ripple grows by equal PIXELS on all
+  // sides (a uniform scale would over-stretch the wide input sideways). Fed to
+  // the CSS transform via custom properties; recomputed on resize.
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+    const update = () => {
+      const w = el.clientWidth;
+      const h = el.clientHeight;
+      if (w > 0 && h > 0) {
+        el.style.setProperty("--ripple-sx", String((w + 2 * RIPPLE_PX) / w));
+        el.style.setProperty("--ripple-sy", String((h + 2 * RIPPLE_PX) / h));
+      }
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
   }, []);
 
   async function handleSubmit(e: React.FormEvent) {
@@ -50,7 +74,10 @@ export default function NewsletterForm({
         <label htmlFor="newsletter-email" className="sr-only">
           Email address
         </label>
-        <div className={`relative flex-1 ${pulse ? "newsletter-ripple-on" : ""}`}>
+        <div
+          ref={wrapperRef}
+          className={`relative flex-1 ${pulse ? "newsletter-ripple-on" : ""}`}
+        >
           <input
             id="newsletter-email"
             type="email"

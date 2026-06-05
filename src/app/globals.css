@@ -37,36 +37,43 @@ body {
 }
 
 /* Shockwave ripple around the newsletter input when arrived at via #newsletter.
-   A ::before ring (slightly larger than the field) scales from small to large
-   while fading, so it reads as a wave radiating outward. */
-/* Expand by equal pixels on every side (not transform: scale, which would grow
-   width/height proportionally and over-stretch a wide input sideways). */
+   A filled ::before band sits behind the (opaque) input and scales outward,
+   so only a uniform band peeks past the input edges and fades — a wave.
+
+   Only `transform` and `opacity` are animated: they are the sole GPU-composited
+   CSS properties, so WebKit (every iOS browser, incl. iOS Chrome) animates them
+   on the compositor without the per-frame repaint that made `outline-offset` /
+   inset / box-shadow stagger on the loop restart on iOS.
+
+   --ripple-sx / --ripple-sy are set per-axis from the input's measured size so
+   the band grows by equal PIXELS on all sides (a uniform scale would stretch a
+   wide input sideways). Opacity is 0 at BOTH 0% and 100% so the transform reset
+   at the loop boundary happens while fully transparent — no visible snap-back. */
 @keyframes newsletter-ripple {
-  from {
-    opacity: 1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-  to {
+  0% {
     opacity: 0;
-    top: -14px;
-    right: -14px;
-    bottom: -14px;
-    left: -14px;
+    transform: scale(1, 1);
+  }
+  25% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(var(--ripple-sx, 1.12), var(--ripple-sy, 1.6));
   }
 }
 
 .newsletter-ripple-on::before {
   content: "";
   position: absolute;
-  inset: 0; /* starts at the input's exact width/height */
+  inset: 0; /* matches the input's width/height */
   z-index: 0; /* sits behind the input */
-  border-radius: 0.5rem;
-  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.375rem; /* matches the input's rounded-md */
+  background: rgba(0, 0, 0, 0.4);
   pointer-events: none;
-  animation: newsletter-ripple 1.8s ease-out infinite;
+  transform-origin: center;
+  will-change: transform, opacity;
+  animation: newsletter-ripple 1.6s ease-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
