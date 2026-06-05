@@ -15,7 +15,7 @@ export default function NewsletterForm({
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<Status>("idle");
-  const [pulse, setPulse] = useState(true);
+  const [pulse, setPulse] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   // When the page is reached via #newsletter, draw attention to the input with
