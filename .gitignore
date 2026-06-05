@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# local-only editor drafts (never committed)
+/content/drafts/
+
 # next.js
 /.next/
 /out/

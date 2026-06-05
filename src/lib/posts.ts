@@ -60,16 +60,22 @@ export function getAllPosts(): BlogPost[] {
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-/** Published posts only, newest first. */
+/**
+ * Posts visible on the blog, newest first. Includes fully published posts and
+ * "writing" (title-only) posts — a writing post lists its title even if it
+ * isn't fully published yet.
+ */
 export function getPublishedPosts(): BlogPost[] {
-  return getAllPosts().filter((post) => post.published);
+  return getAllPosts().filter((post) => post.published || post.writing);
 }
 
-/** Look up a single post by slug. Drafts are returned outside production. */
+/** Look up a single post by slug. Unlisted drafts 404 in production. */
 export function getPostBySlug(slug: string): BlogPost | null {
   const post = getAllPosts().find((p) => p.slug === slug);
   if (!post) return null;
-  if (!post.published && process.env.NODE_ENV === "production") return null;
+  if (!post.published && !post.writing && process.env.NODE_ENV === "production") {
+    return null;
+  }
   return post;
 }
 
