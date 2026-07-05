@@ -2,9 +2,229 @@
 title: "Predictable Ambiguity Mogs Elicitation in AI Tool Calls"
 slug: "mogging"
 description: "A reflection on whether AI tool calls really need elicitation for predictable ambiguity, or whether better tool design can handle cases like “Call John” before the tool ever has to pause and ask back."
-date: "2026-06-05"
+date: "2026-07-05"
 published: true
-writing: true
+writing: false
 ---
 
-_This post is being written. Check back soon._
+# Predictable Ambiguity Mogs Elicitation in AI Tool Calls
+
+A reflection on whether AI tool calls really need elicitation for predictable ambiguity, or whether better tool design can handle cases like “Call Tony” before the tool ever has to pause and ask back.
+
+## Background
+
+During my first week at Google on the Android AppFunction team, I had lunch with the team, and the topic of elicitation came up.
+
+The idea was to make tool calls more bidirectional. Instead of a tool just failing when information is missing, the tool could ask the user for what it needs and then continue from where it stopped.
+
+At first, this sounded useful. But the more we talked about it, the more I started wondering where the responsibility should actually live: with the agent, the app, the tool API, or the UI?
+
+I do not have the final answer. I am just reflecting on the tradeoffs I noticed around elicitation, ambiguity, and better tool design.
+
+## The “Call Tony” Problem
+
+One example that came up was:
+
+```text
+User: Call Tony
+```
+
+Simple request, but the app may have multiple contacts named Tony.
+
+The agent understands the user’s intent. It knows the user wants to make a call. But the target app owns the contact repository, and only the app may know that there is Tony Smith, Tony from work, and Tony saved with no surname.
+
+So the question is:
+
+Should the agent call:
+
+```text
+call("Tony")
+```
+
+and then the tool pauses to ask, “Which Tony?”
+
+Or should the agent first call:
+
+```text
+findContacts("Tony")
+```
+
+then show the user the possible Tonys, get the selected contact ID, and finally call:
+
+```text
+callContactById("tony_id_123")
+```
+
+I prefer the second approach.
+
+## What Even Is Elicitation?
+
+Elicitation is basically when a tool pauses during execution to ask the user for missing information. You can read more [here](https://gofastmcp.com/servers/elicitation).
+
+The flow looks like this:
+
+```text
+Tool starts
+→ tool realizes it needs more information
+→ tool asks the user
+→ user responds
+→ tool continues from where it stopped
+```
+
+The important part is that the tool continues from where it **stopped**.
+
+That is what makes elicitation different from just throwing an error or asking the agent to start over.
+
+## Difference in Ambiguity
+
+### Predictable Ambiguity vs Runtime Ambiguity
+
+The distinction that helped me think about this was predictable ambiguity vs runtime ambiguity.
+
+Predictable ambiguity is ambiguity the developer can reasonably expect before the tool runs.
+
+Examples:
+
+```text
+Call Tony
+Email Sarah
+Book a meeting with Alex
+Send this to my manager
+```
+
+These are all cases where the name or role might match more than one person.
+
+Runtime ambiguity is ambiguity that only appears after the tool starts doing work.
+
+Examples:
+
+```text
+A flight price changes in real time
+A reservation is temporarily held
+Inventory changes in real time
+An app discovers a condition only at runtime
+```
+
+This difference matters because not all ambiguity needs the same solution.
+
+But I think users would probably come across predictable ambiguity more often than runtime ambiguity. In many cases, simply designing separate discovery or resolution tools from final action tools could cover most use cases.
+
+## Designing Better AI Tools
+
+For predictable ambiguity, I think better tool design may be better than elicitation.
+
+Instead of making one tool do everything, the app can expose resolver tools and final action tools separately.
+
+For example:
+
+```text
+findContacts("Tony")
+resolveRecipient("Sarah")
+searchCalendarAttendees("Alex")
+```
+
+Then, after the user or agent **resolves** the ambiguity, the final action can happen:
+
+```text
+callContactById("tony_id_123")
+sendEmailToContactId("sarah_id_456")
+createMeetingWithAttendeeId("alex_id_789")
+```
+
+This feels safer because the agent is not guessing.
+
+It also makes the tool flow more explicit. The app gives the agent a way to search, resolve, and then act.
+
+So in the “Call Tony” example, I do not think `call("Tony")` should be the first tool call. The agent should probably resolve Tony first, then call the selected contact by ID.
+
+To me, predictable ambiguity is not always an elicitation problem. Sometimes it is a tool design problem.
+
+## Elicitation Is Still Useful
+
+That does not mean elicitation is useless.
+
+I think elicitation becomes more useful when the tool has already started a workflow and there is **state** that should not be lost.
+
+For example:
+
+```text
+bookFlight(...)
+→ app checks live inventory
+→ one fare disappears in real time
+→ app holds another fare for 90 seconds
+→ asks user: “Accept £40 more for this alternate?”
+→ continues the same reservation flow
+```
+
+In this case, elicitation makes more sense.
+
+The tool has already started something. The app may be holding temporary state. Restarting the whole flow could lose the reservation, duplicate work, or create a worse experience.
+
+So maybe the question is not:
+
+
+> Should we use elicitation or not?
+
+
+Maybe the better question is:
+
+
+> Is this ambiguity predictable before the tool runs,
+> or did it appear during a stateful runtime workflow?
+
+
+## Throwing Exceptions Isn’t a Solution
+
+Another idea that came up during lunch with my team was throwing an exception when something is missing.
+
+But I do not think exceptions should be the default solution for expected ambiguity.
+
+If the app cannot call “Tony” because multiple Tonys exist, or because Tony does not exist at all, that should not automatically be treated like an unexpected failure. It is a normal result the tool should be able to represent.
+
+Instead of this:
+
+```text
+throw MissingContactException("Which Tony?")
+```
+
+the tool could return something structured:
+
+```text
+AmbiguousResult(candidates)
+NeedsClarification(question, options)
+NotFound(query)
+```
+
+Exceptions are still useful for real failures, invalid inputs, or unexpected states.
+
+But predictable ambiguity should probably be represented as data, not treated like the app is broken.
+
+## The Conversation Isn’t Over
+
+One important factor I did not mention earlier is that there was a constraint: the user may not want the agent to get the full list of all their contacts.
+
+That may be one reason the tool went directly to:
+
+```text
+call("Tony")
+```
+
+and then proceeded with elicitation.
+
+But I still did not fully understand that part of the argument, because eventually, to resolve the issue, the agent or UI still needs an answer to “Which Tony?” So the privacy and resolution boundary was not completely clear to me from the conversation.
+
+Anyway, as you can tell, we did not really come to a final conclusion during lunch.
+
+I also asked some engineers after, and the answer still seemed open. There are tradeoffs, and the right answer depends on the type of ambiguity, who owns the state, what the agent is allowed to see, and whether the tool can safely resume.
+
+My current view is this:
+
+For predictable ambiguity, better tool design may be cleaner. Expose resolver APIs. Let the agent or UI help the user choose. Then call the final action with a stable ID.
+
+For runtime, stateful ambiguity, elicitation may be the right primitive. If the tool has already started a flow and needs user input to continue safely, pausing and resuming makes sense.
+
+So maybe predictable ambiguity mogs elicitation sometimes.
+
+But not always.
+
+It depends on the use case.
