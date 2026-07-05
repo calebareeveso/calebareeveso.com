@@ -20,9 +20,24 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
+  const title = `${post.title} — Caleb Areeveso`;
+
   return {
-    title: `${post.title} — Caleb Areeveso`,
+    title,
     description: post.description,
+    openGraph: {
+      title,
+      description: post.description,
+      url: `/blog/${post.slug}`,
+      type: "article",
+      images: ["/static/images/calebareveso_banner.jpg"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: post.description,
+      images: ["/static/images/calebareveso_banner.jpg"],
+    },
   };
 }
 
