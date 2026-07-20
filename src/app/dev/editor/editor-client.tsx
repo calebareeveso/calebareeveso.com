@@ -424,13 +424,13 @@ export default function EditorClient() {
           {/* Editor / Preview */}
           <div className="flex-1 min-h-0 overflow-auto">
             {preview ? (
-              <div className="max-w-xl mx-auto px-4 py-8">
+              <div className="mx-auto w-full max-w-6xl">
                 {previewError ? (
-                  <pre className="font-mono text-[12.5px] text-secondary whitespace-pre-wrap">{previewError}</pre>
+                  <pre className="mx-auto max-w-xl whitespace-pre-wrap px-4 py-8 font-mono text-[12.5px] text-secondary">{previewError}</pre>
                 ) : previewCode ? (
                   <MdxContent code={previewCode} />
                 ) : (
-                  <p className="text-base text-secondary/60">Nothing to preview.</p>
+                  <p className="mx-auto max-w-xl px-4 py-8 text-base text-secondary/60">Nothing to preview.</p>
                 )}
               </div>
             ) : (

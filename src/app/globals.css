@@ -36,6 +36,34 @@ body {
   color: #0000004d;
 }
 
+/* Prose and ordinary components occupy the same content width as a
+   `max-w-xl mx-auto px-4` wrapper. Add `mdx-wide` only to a component whose
+   content genuinely needs a little more horizontal room. */
+.mdx-content {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.mdx-content > :not(.mdx-wide) {
+  width: calc(100% - 2rem);
+  max-width: 34rem;
+  margin-inline: auto;
+}
+
+.mdx-content > .mdx-wide {
+  width: calc(100% - 2rem);
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .mdx-content > .mdx-wide {
+    width: 100%;
+  }
+}
+
 /* Shockwave ripple around the newsletter input when arrived at via #newsletter.
    A filled ::before band sits behind the (opaque) input and scales outward,
    so only a uniform band peeks past the input edges and fades — a wave.

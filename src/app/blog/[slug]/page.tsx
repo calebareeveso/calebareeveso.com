@@ -59,9 +59,9 @@ export default async function BlogPostPage({
 
   return (
     <div className="wrapper flex justify-center min-h-screen">
-      <div className="max-w-xl mx-auto container px-4 py-20">
+      <div className="container mx-auto w-full max-w-6xl py-20">
         <main className="flex flex-col gap-8">
-          <header className="flex flex-col gap-2">
+          <header className="mx-auto flex w-full max-w-xl flex-col gap-2 px-4">
             <p className="text-[12.5px] font-mono text-secondary/60">
               {formatDate(post.date)}
               {post.writing && <span className="ml-2 uppercase">· writing</span>}
@@ -80,7 +80,7 @@ export default async function BlogPostPage({
             )}
           </article>
 
-          <div className="flex justify-between gap-2 border-t border-secondary/10 pt-6">
+          <div className="mx-auto flex w-full max-w-xl justify-between gap-2 border-t border-secondary/10 px-4 pt-6">
             <Link
               href="/blog"
               className="text-base text-secondary hover:text-primary transition-colors duration-300"

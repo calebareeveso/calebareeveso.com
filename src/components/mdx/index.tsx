@@ -37,7 +37,7 @@ export const mdxComponents = {
   ),
   blockquote: (props: ComponentPropsWithoutRef<"blockquote">) => (
     <blockquote
-      className="border-l border-secondary/10 pl-4 my-4 text-secondary"
+      className="my-6 border-l-2 border-secondary/30 py-1 pl-4 text-black italic [&>p]:my-0"
       {...props}
     />
   ),

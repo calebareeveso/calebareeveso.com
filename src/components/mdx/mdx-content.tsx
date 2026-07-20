@@ -10,5 +10,9 @@ import { mdxComponents } from "@/components/mdx";
 // "components created during render" rule is intentionally disabled here.
 export default function MdxContent({ code }: { code: string }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
-  return <Component components={mdxComponents} />;
+  return (
+    <div className="mdx-content">
+      <Component components={mdxComponents} />
+    </div>
+  );
 }
