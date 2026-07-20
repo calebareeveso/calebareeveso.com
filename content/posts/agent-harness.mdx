@@ -1,0 +1,193 @@
+---
+title: "Agent Harness Evolution Across Model Generations"
+slug: "agent-harness"
+description: "Deep dive into how preprocessing, post-processing, and orchestration responsibilities shift between the agent harness and the AI model as its capabilities improve."
+date: "2026-07-20"
+published: true
+writing: false
+---
+
+import {
+  ArticleTable,
+  ArchitectureTimeline,
+  CurrentTurnLifecycle,
+  ResponsibilityHeatmap,
+  SequenceDiagram,
+  ToolModeAndSchemaComparison,
+} from "@/components/blog/agent-harness-visuals";
+import {
+  modeSchemaData,
+  modeSummaryTable,
+  responsibilityData,
+  responsibilitySummaryTable,
+  timelineData,
+  turnParticipants,
+  turnSequence,
+} from "@/components/blog/agent-harness-data";
+
+## Background
+
+Around the midpoint of my internship at Google, the topic of agent harnesses came up during lunch with my team.
+
+We were talking about AI (obviously). The team manager suggested that as models become more agentic and capable of writing code, we may eventually need less of the agent harness. I partly agreed, but I still thought the harness would be needed to manage tools, context, execution, and safety.
+
+Another teammate disagreed and pointed out that stronger models still need basic system instructions like:
+
+> You are an expert software engineer.
+
+This left me wondering:
+
+As models take on more orchestration themselves, what is the agent harness still responsible for?
+
+To explore this, I used the open-source Codex agent harness as a case study.
+
+## What Does the Agent Harness Do?
+
+Before deciding whether we still need an agent harness, it helps to understand what it actually does.
+
+The agent harness is the software around the model. It prepares context, provides tools, sends requests to the model, executes tool calls, manages conversation history, and returns results.
+
+It may also control:
+
+* Which tools the model can access  
+* Where commands can run  
+* Whether approval is required  
+* How much output enters the context  
+* What happens when an action fails
+
+The model decides what it wants to do. The harness provides and controls the environment in which those decisions become actions.
+
+So if models can now handle more of the planning and orchestration themselves, the question is which of these responsibilities still need to remain with the harness.
+
+## Codex as a Case Study
+
+To explore this question, I looked at the open-source [OpenAI Codex repository](https://github.com/openai/codex)⁠.
+
+Codex is useful as a case study because its model configurations, prompts, tool handling, execution flow, and Git history are publicly available.
+
+I traced how a current Codex turn moves between the model, the harness, the code-mode runtime, and the available tools.
+
+<SequenceDiagram
+  participants={turnParticipants}
+  steps={turnSequence}
+  caption="Direct calls skip the code-runtime lane, but both paths return through harness policy and execution."
+/>
+
+The model handles reasoning and can now write the workflow. But the Codex harness still prepares the context, exposes the tools, controls execution, applies safety policies, processes results, and returns the final output.
+
+Codex does not represent every agent system, but it gives us a real implementation to examine instead of discussing the role of the harness only in theory.
+## How the Codex Harness Evolved
+
+The Codex harness did not change all at once.
+
+Earlier model generations primarily used direct tool calling. The model selected a tool, the harness executed it, and the result was returned to the model.
+
+Over time, Codex added model-specific context management, data-driven model metadata, tool search, and different ways of exposing tools. In March 2026, the repository introduced a dedicated code-mode runtime and later added a V8 environment for running model-written JavaScript.
+
+This made a different type of orchestration possible. Instead of only selecting individual tools, the model could write code that calls several tools, processes their results, and decides what to do next.
+
+By July 2026, the GPT-5.6 model configurations selected `CodeModeOnly`, making model-written code a central part of how those models interact with tools.
+
+<ArchitectureTimeline data={timelineData} />
+
+The timeline shows that newer model configurations and programmable tool use evolved together. However, the Git history does not prove that improvements in the models caused every architectural change. Some changes may also reflect product requirements, infrastructure, security, or performance decisions.
+
+## Beyond Tool Calling to Model-Written Code
+
+The clearest change in Codex is how models interact with tools.
+
+The repository defines three tool modes:
+
+* `Direct`  
+* `CodeMode`  
+* `CodeModeOnly`
+
+In Direct mode, the model sees individual tools and calls them separately. The harness executes each call and returns the result.
+
+In CodeMode, the model can write JavaScript that calls multiple tools and processes their results. This allows tool sequencing, filtering, aggregation, branching, and retries to happen inside model-written code.
+
+CodeModeOnly takes this further. Many tools are accessed through the programmable `exec` interface instead of being exposed as separate top-level tools.
+
+However, fewer visible tools do not necessarily mean a smaller interface:
+
+<ArticleTable {...modeSummaryTable} />
+
+<ToolModeAndSchemaComparison data={modeSchemaData} />
+
+CodeModeOnly exposed half as many tool objects as Direct, but its estimated schema size was about 58% larger. The `exec` interface still has to describe the tools available inside the runtime.
+
+The important change is not simply that fewer tools are exposed. It is that the model can now write the workflow connecting those tools instead of relying on the harness to define every step in advance.
+
+## What Moved and What Stayed
+
+Model-written code changes where some responsibilities live, but it does not move everything into the model.
+
+I classified 21 responsibilities across Direct and CodeModeOnly:
+
+<ArticleTable {...responsibilitySummaryTable} />
+
+Ten responsibilities become expressible through model-written JavaScript:
+
+* Planning  
+* Repository search  
+* Tool selection  
+* Tool sequencing  
+* Script writing  
+* Intermediate filtering  
+* Aggregation  
+* Branching  
+* Retry decisions  
+* Patch generation
+
+But six trusted responsibilities remain with the harness:
+
+* Command execution  
+* Sandbox enforcement  
+* Approval enforcement  
+* Output truncation  
+* History normalization  
+* Telemetry
+
+<ResponsibilityHeatmap
+  data={responsibilityData}
+  columns={["Direct", "CodeModeOnly"]}
+/>
+
+The heatmap is an interpretation of the architecture, not a model-capability benchmark. It shows that orchestration does not simply move from the harness into the model itself. A new layer appears where the model writes the code, while the harness still controls how that code is executed.
+
+## Do We Still Need the Agent Harness?
+
+Model-written code reduces the need for the harness to define every workflow, but it does not remove the harness.
+
+In a current Codex turn, the harness still:
+
+* Builds and manages the context  
+* Decides which tools are available  
+* Runs model-written code  
+* Routes nested tool calls  
+* Enforces approvals and sandbox rules  
+* Truncates and normalizes results  
+* Records state and telemetry  
+* Handles failures and recovery
+
+<CurrentTurnLifecycle />
+
+The model can decide what to do and write the code for doing it. The harness still controls where, when, and how that code is executed.
+
+So yes, we still need the agent harness. Its role is shifting from defining the workflow to providing a trusted runtime for model-written workflows.
+
+## Was Spending My Weekend on This Worth It?
+
+I spent a good part of my weekend on this because I was curious and wanted an answer.
+
+Was it worth it? I think so.
+
+I did not prove that the team manager was wrong or that I was right. The answer depends on what we mean by the harness.
+
+If we mean hard-coded workflows and repetitive instructions, then yes, we may need less of it. Models can now write more of the workflow themselves.
+
+But if we mean the trusted runtime that manages context, tools, execution, permissions, and recovery, then the harness is still very much needed.
+
+So my answer now is simple:
+
+> We may need less harness-written orchestration, but we still need the harness.
