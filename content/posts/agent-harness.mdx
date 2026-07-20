@@ -3,7 +3,7 @@ title: "Agent Harness Evolution Across Model Generations"
 slug: "agent-harness"
 description: "Deep dive into how preprocessing, post-processing, and orchestration responsibilities shift between the agent harness and the AI model as its capabilities improve."
 date: "2026-07-20"
-published: true
+published: false
 writing: false
 ---
 
@@ -49,11 +49,11 @@ The agent harness is the software around the model. It prepares context, provide
 
 It may also control:
 
-* Which tools the model can access  
-* Where commands can run  
-* Whether approval is required  
-* How much output enters the context  
-* What happens when an action fails
+- Which tools the model can access
+- Where commands can run
+- Whether approval is required
+- How much output enters the context
+- What happens when an action fails
 
 The model decides what it wants to do. The harness provides and controls the environment in which those decisions become actions.
 
@@ -76,6 +76,7 @@ I traced how a current Codex turn moves between the model, the harness, the code
 The model handles reasoning and can now write the workflow. But the Codex harness still prepares the context, exposes the tools, controls execution, applies safety policies, processes results, and returns the final output.
 
 Codex does not represent every agent system, but it gives us a real implementation to examine instead of discussing the role of the harness only in theory.
+
 ## How the Codex Harness Evolved
 
 The Codex harness did not change all at once.
@@ -98,9 +99,9 @@ The clearest change in Codex is how models interact with tools.
 
 The repository defines three tool modes:
 
-* `Direct`  
-* `CodeMode`  
-* `CodeModeOnly`
+- `Direct`
+- `CodeMode`
+- `CodeModeOnly`
 
 In Direct mode, the model sees individual tools and calls them separately. The harness executes each call and returns the result.
 
@@ -128,25 +129,25 @@ I classified 21 responsibilities across Direct and CodeModeOnly:
 
 Ten responsibilities become expressible through model-written JavaScript:
 
-* Planning  
-* Repository search  
-* Tool selection  
-* Tool sequencing  
-* Script writing  
-* Intermediate filtering  
-* Aggregation  
-* Branching  
-* Retry decisions  
-* Patch generation
+- Planning
+- Repository search
+- Tool selection
+- Tool sequencing
+- Script writing
+- Intermediate filtering
+- Aggregation
+- Branching
+- Retry decisions
+- Patch generation
 
 But six trusted responsibilities remain with the harness:
 
-* Command execution  
-* Sandbox enforcement  
-* Approval enforcement  
-* Output truncation  
-* History normalization  
-* Telemetry
+- Command execution
+- Sandbox enforcement
+- Approval enforcement
+- Output truncation
+- History normalization
+- Telemetry
 
 <ResponsibilityHeatmap
   data={responsibilityData}
@@ -161,14 +162,14 @@ Model-written code reduces the need for the harness to define every workflow, bu
 
 In a current Codex turn, the harness still:
 
-* Builds and manages the context  
-* Decides which tools are available  
-* Runs model-written code  
-* Routes nested tool calls  
-* Enforces approvals and sandbox rules  
-* Truncates and normalizes results  
-* Records state and telemetry  
-* Handles failures and recovery
+- Builds and manages the context
+- Decides which tools are available
+- Runs model-written code
+- Routes nested tool calls
+- Enforces approvals and sandbox rules
+- Truncates and normalizes results
+- Records state and telemetry
+- Handles failures and recovery
 
 <CurrentTurnLifecycle />
 
